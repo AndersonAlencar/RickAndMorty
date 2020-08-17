@@ -1,0 +1,511 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E281BE6224E6CEDF00A6A23E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E281BE6124E6CEDF00A6A23E /* AppDelegate.swift */; };
+		E281BE6424E6CEDF00A6A23E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E281BE6324E6CEDF00A6A23E /* SceneDelegate.swift */; };
+		E281BE6B24E6CEE200A6A23E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E281BE6A24E6CEE200A6A23E /* Assets.xcassets */; };
+		E281BE6E24E6CEE200A6A23E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E281BE6C24E6CEE200A6A23E /* LaunchScreen.storyboard */; };
+		E281BE7924E6CEE200A6A23E /* Insane_CircuitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E281BE7824E6CEE200A6A23E /* Insane_CircuitTests.swift */; };
+		E281BE8824E6D0CF00A6A23E /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E281BE8724E6D0CF00A6A23E /* DiscoverViewController.swift */; };
+		E281BE8A24E6D0EA00A6A23E /* SeasonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E281BE8924E6D0EA00A6A23E /* SeasonsViewController.swift */; };
+		E281BE8C24E6D0F900A6A23E /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E281BE8B24E6D0F900A6A23E /* FavoritesViewController.swift */; };
+		E281BE8E24E6D45500A6A23E /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E281BE8D24E6D45500A6A23E /* MainTabBarViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E281BE7524E6CEE200A6A23E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E281BE5624E6CEDF00A6A23E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E281BE5D24E6CEDF00A6A23E;
+			remoteInfo = "Insane Circuit";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E281BE5E24E6CEDF00A6A23E /* Insane Circuit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Insane Circuit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E281BE6124E6CEDF00A6A23E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E281BE6324E6CEDF00A6A23E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E281BE6A24E6CEE200A6A23E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E281BE6D24E6CEE200A6A23E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E281BE6F24E6CEE200A6A23E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E281BE7424E6CEE200A6A23E /* Insane CircuitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Insane CircuitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E281BE7824E6CEE200A6A23E /* Insane_CircuitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insane_CircuitTests.swift; sourceTree = "<group>"; };
+		E281BE7A24E6CEE200A6A23E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E281BE8724E6D0CF00A6A23E /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		E281BE8924E6D0EA00A6A23E /* SeasonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonsViewController.swift; sourceTree = "<group>"; };
+		E281BE8B24E6D0F900A6A23E /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		E281BE8D24E6D45500A6A23E /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E281BE5B24E6CEDF00A6A23E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E281BE7124E6CEE200A6A23E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E281BE5524E6CEDF00A6A23E = {
+			isa = PBXGroup;
+			children = (
+				E281BE6024E6CEDF00A6A23E /* Insane Circuit */,
+				E281BE7724E6CEE200A6A23E /* Insane CircuitTests */,
+				E281BE5F24E6CEDF00A6A23E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E281BE5F24E6CEDF00A6A23E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E281BE5E24E6CEDF00A6A23E /* Insane Circuit.app */,
+				E281BE7424E6CEE200A6A23E /* Insane CircuitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E281BE6024E6CEDF00A6A23E /* Insane Circuit */ = {
+			isa = PBXGroup;
+			children = (
+				E281BE8424E6D04000A6A23E /* View */,
+				E281BE8324E6D02A00A6A23E /* Controller */,
+				E281BE6124E6CEDF00A6A23E /* AppDelegate.swift */,
+				E281BE6324E6CEDF00A6A23E /* SceneDelegate.swift */,
+				E281BE6A24E6CEE200A6A23E /* Assets.xcassets */,
+				E281BE6C24E6CEE200A6A23E /* LaunchScreen.storyboard */,
+				E281BE6F24E6CEE200A6A23E /* Info.plist */,
+			);
+			path = "Insane Circuit";
+			sourceTree = "<group>";
+		};
+		E281BE7724E6CEE200A6A23E /* Insane CircuitTests */ = {
+			isa = PBXGroup;
+			children = (
+				E281BE7824E6CEE200A6A23E /* Insane_CircuitTests.swift */,
+				E281BE7A24E6CEE200A6A23E /* Info.plist */,
+			);
+			path = "Insane CircuitTests";
+			sourceTree = "<group>";
+		};
+		E281BE8324E6D02A00A6A23E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E281BE8724E6D0CF00A6A23E /* DiscoverViewController.swift */,
+				E281BE8924E6D0EA00A6A23E /* SeasonsViewController.swift */,
+				E281BE8B24E6D0F900A6A23E /* FavoritesViewController.swift */,
+				E281BE8D24E6D45500A6A23E /* MainTabBarViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E281BE8424E6D04000A6A23E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E281BE5D24E6CEDF00A6A23E /* Insane Circuit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E281BE7D24E6CEE200A6A23E /* Build configuration list for PBXNativeTarget "Insane Circuit" */;
+			buildPhases = (
+				E281BE5A24E6CEDF00A6A23E /* Sources */,
+				E281BE5B24E6CEDF00A6A23E /* Frameworks */,
+				E281BE5C24E6CEDF00A6A23E /* Resources */,
+				E281BE9024E6DCB500A6A23E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Insane Circuit";
+			productName = "Insane Circuit";
+			productReference = E281BE5E24E6CEDF00A6A23E /* Insane Circuit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E281BE7324E6CEE200A6A23E /* Insane CircuitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E281BE8024E6CEE200A6A23E /* Build configuration list for PBXNativeTarget "Insane CircuitTests" */;
+			buildPhases = (
+				E281BE7024E6CEE200A6A23E /* Sources */,
+				E281BE7124E6CEE200A6A23E /* Frameworks */,
+				E281BE7224E6CEE200A6A23E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E281BE7624E6CEE200A6A23E /* PBXTargetDependency */,
+			);
+			name = "Insane CircuitTests";
+			productName = "Insane CircuitTests";
+			productReference = E281BE7424E6CEE200A6A23E /* Insane CircuitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E281BE5624E6CEDF00A6A23E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "Anderson Alencar";
+				TargetAttributes = {
+					E281BE5D24E6CEDF00A6A23E = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					E281BE7324E6CEE200A6A23E = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = E281BE5D24E6CEDF00A6A23E;
+					};
+				};
+			};
+			buildConfigurationList = E281BE5924E6CEDF00A6A23E /* Build configuration list for PBXProject "Insane Circuit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E281BE5524E6CEDF00A6A23E;
+			productRefGroup = E281BE5F24E6CEDF00A6A23E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E281BE5D24E6CEDF00A6A23E /* Insane Circuit */,
+				E281BE7324E6CEE200A6A23E /* Insane CircuitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E281BE5C24E6CEDF00A6A23E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E281BE6E24E6CEE200A6A23E /* LaunchScreen.storyboard in Resources */,
+				E281BE6B24E6CEE200A6A23E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E281BE7224E6CEE200A6A23E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E281BE9024E6DCB500A6A23E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: Swiftlint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E281BE5A24E6CEDF00A6A23E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E281BE8E24E6D45500A6A23E /* MainTabBarViewController.swift in Sources */,
+				E281BE8C24E6D0F900A6A23E /* FavoritesViewController.swift in Sources */,
+				E281BE6224E6CEDF00A6A23E /* AppDelegate.swift in Sources */,
+				E281BE6424E6CEDF00A6A23E /* SceneDelegate.swift in Sources */,
+				E281BE8824E6D0CF00A6A23E /* DiscoverViewController.swift in Sources */,
+				E281BE8A24E6D0EA00A6A23E /* SeasonsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E281BE7024E6CEE200A6A23E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E281BE7924E6CEE200A6A23E /* Insane_CircuitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E281BE7624E6CEE200A6A23E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E281BE5D24E6CEDF00A6A23E /* Insane Circuit */;
+			targetProxy = E281BE7524E6CEE200A6A23E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E281BE6C24E6CEE200A6A23E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E281BE6D24E6CEE200A6A23E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E281BE7B24E6CEE200A6A23E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E281BE7C24E6CEE200A6A23E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E281BE7E24E6CEE200A6A23E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3XAHB7RJJD;
+				INFOPLIST_FILE = "Insane Circuit/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andersonalencar.Insane-Circuit";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E281BE7F24E6CEE200A6A23E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3XAHB7RJJD;
+				INFOPLIST_FILE = "Insane Circuit/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andersonalencar.Insane-Circuit";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E281BE8124E6CEE200A6A23E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3XAHB7RJJD;
+				INFOPLIST_FILE = "Insane CircuitTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andersonalencar.Insane-CircuitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Insane Circuit.app/Insane Circuit";
+			};
+			name = Debug;
+		};
+		E281BE8224E6CEE200A6A23E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3XAHB7RJJD;
+				INFOPLIST_FILE = "Insane CircuitTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andersonalencar.Insane-CircuitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Insane Circuit.app/Insane Circuit";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E281BE5924E6CEDF00A6A23E /* Build configuration list for PBXProject "Insane Circuit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E281BE7B24E6CEE200A6A23E /* Debug */,
+				E281BE7C24E6CEE200A6A23E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E281BE7D24E6CEE200A6A23E /* Build configuration list for PBXNativeTarget "Insane Circuit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E281BE7E24E6CEE200A6A23E /* Debug */,
+				E281BE7F24E6CEE200A6A23E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E281BE8024E6CEE200A6A23E /* Build configuration list for PBXNativeTarget "Insane CircuitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E281BE8124E6CEE200A6A23E /* Debug */,
+				E281BE8224E6CEE200A6A23E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E281BE5624E6CEDF00A6A23E /* Project object */;
+}

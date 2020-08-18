@@ -24,12 +24,5 @@ class MainTabBarViewController: UITabBarController {
         
         let tabBarList = [discover, seasons, favorites]
         viewControllers = tabBarList
-        
-        let manager = NetworkManager()
-        
-        manager.getCharacterImage(id: 1){ (person, error) in
-            print(person)
-            print(error)
-        }
     }
 }

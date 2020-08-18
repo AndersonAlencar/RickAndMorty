@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Location {
+struct Location: Codable {
     var id: Int
     var name: String
     var type: String

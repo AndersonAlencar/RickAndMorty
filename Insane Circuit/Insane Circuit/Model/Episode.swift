@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct Episode {
+struct Episode: Codable {
     var id: Int
     var name: String
     var episode: String

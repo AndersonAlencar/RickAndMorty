@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Character {
-    var id: String
+struct Character: Codable {
+    var id: Int
     var name: String
     var status: String
     var species: String

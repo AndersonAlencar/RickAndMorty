@@ -1,5 +1,5 @@
 //
-//  NetworkManager.swift
+//  CharacterResults.swift
 //  Insane Circuit
 //
 //  Created by Anderson Alencar on 18/08/20.
@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct CharacterResults {
+    var results: [Character]
+}

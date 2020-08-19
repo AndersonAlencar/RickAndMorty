@@ -10,7 +10,11 @@ import UIKit
 
 class CharactersTableViewCell: UITableViewCell {
     
-    let mockArray = ["Anderson1","Anderson2","Anderson3","Anderson4","Anderson5","Anderson6","Anderson7","Anderson8","Anderson9","Anderson10"]
+    var characters: [Character] = [Character]() {
+        didSet {
+            self.collectionCharacters.reloadData()
+        }
+    }
     
     var colorCell: UIColor?
     
@@ -66,12 +70,12 @@ extension CharactersTableViewCell: ViewCode {
 
 extension CharactersTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return characters.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CharactersCollectionViewCell
-        cell.nameCharacter.text = mockArray[indexPath.row].uppercased()
+        cell.configureCell(character: characters[indexPath.row])
         cell.backgroundColor = colorCell!
         cell.layer.cornerRadius = 10
         return cell

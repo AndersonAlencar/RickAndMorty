@@ -13,6 +13,7 @@ class CharactersCollectionViewCell: UICollectionViewCell {
     lazy var nameCharacter: UILabel = {
         let nameCharacter = UILabel()
         nameCharacter.font = UIFont.systemFont(ofSize: 28, weight: .bold)
+        nameCharacter.adjustsFontSizeToFitWidth = true
         nameCharacter.textColor = .systemBlue
         nameCharacter.text = "Apenas Testando"
         nameCharacter.textColor = .white
@@ -23,6 +24,7 @@ class CharactersCollectionViewCell: UICollectionViewCell {
     lazy var locationCharacter: UILabel = {
         let locationCharacter = UILabel()
         locationCharacter.font = UIFont(name: "HelveticaNeue", size: 20)
+        locationCharacter.adjustsFontSizeToFitWidth = true
         locationCharacter.textColor = .systemBlue
         locationCharacter.numberOfLines = 0
         locationCharacter.sizeToFit()
@@ -39,6 +41,22 @@ class CharactersCollectionViewCell: UICollectionViewCell {
         characterImage.translatesAutoresizingMaskIntoConstraints = false
         return characterImage
     }()
+    
+    func configureCell(character: Character) {
+        self.nameCharacter.text = character.name.uppercased()
+        self.locationCharacter.text = character.location.name
+    }
+    
+    func df(id: Int) {
+        let manager = NetworkManager()
+        manager.getCharacterImage(id: id) { (data, error) in
+            if let error = error {
+                print(error)
+            } else {
+                
+            }
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

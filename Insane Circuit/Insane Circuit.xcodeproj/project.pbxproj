@@ -169,6 +169,16 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		E2685A0F24EDC95600C74D4C /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				E247D34124EC5B4C00C20D2A /* CharactersView.swift */,
+				E247D34324EC62FF00C20D2A /* CharactersTableViewCell.swift */,
+				E247D34524EC75C800C20D2A /* CharactersCollectionViewCell.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
 		E281BE5524E6CEDF00A6A23E = {
 			isa = PBXGroup;
 			children = (
@@ -227,9 +237,7 @@
 		E281BE8424E6D04000A6A23E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E247D34124EC5B4C00C20D2A /* CharactersView.swift */,
-				E247D34324EC62FF00C20D2A /* CharactersTableViewCell.swift */,
-				E247D34524EC75C800C20D2A /* CharactersCollectionViewCell.swift */,
+				E2685A0F24EDC95600C74D4C /* Discover */,
 			);
 			path = View;
 			sourceTree = "<group>";

@@ -9,6 +9,29 @@
 import UIKit
 
 class CharactersView: UIView {
+    
+    var charactersAlive:[Character] = [Character]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.discoverCharactersTable.reloadData()
+            }
+        }
+    }
+    var charactersDead:[Character] = [Character]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.discoverCharactersTable.reloadData()
+            }
+        }
+    }
+    
+    var charactersAlien:[Character] = [Character]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.discoverCharactersTable.reloadData()
+            }
+        }
+    }
 
     lazy var discoverCharactersTable: UITableView = {
         let discoverCharactersTable = UITableView()
@@ -17,9 +40,33 @@ class CharactersView: UIView {
         discoverCharactersTable.delegate = self
         discoverCharactersTable.dataSource = self
         discoverCharactersTable.register(CharactersTableViewCell.self, forCellReuseIdentifier: "TableViewCellCharacter")
+        //discoverCharactersTable.tableHeaderView = self.searchController.searchBar
+        //discoverCharactersTable.tableHeaderView = self.search
         discoverCharactersTable.translatesAutoresizingMaskIntoConstraints = false
         return discoverCharactersTable
     }()
+    
+//    lazy var search: UISearchBar = {
+//        let search = UISearchBar()
+//        search.searchBarStyle = .default//
+//        search.placeholder = "Search charcter"
+//        search.isTranslucent = false//
+//        search.sizeToFit()//
+//        search.delegate = self
+//        return search
+//    }()
+    
+//    lazy var searchController: UISearchController = {
+//        let searchController = UISearchController(searchResultsController: nil)
+//        searchController.searchResultsUpdater = self
+//        searchController.obscuresBackgroundDuringPresentation = false
+//        searchController.definesPresentationContext = true
+//        searchController.searchBar.sizeToFit()
+//        searchController.searchBar.tintColor = .backgroundBlueColor
+//        searchController.searchBar.barTintColor = .backgroundBlueColor
+//        searchController.searchBar.text = "Search charcter..."
+//        return searchController
+//    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,28 +76,9 @@ class CharactersView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
-extension CharactersView: ViewCode {
-    func buildHierarchy() {
-        addSubview(discoverCharactersTable)
-    }
-    
-    func setUpLayoutConstraints() {
-        NSLayoutConstraint.activate([
-            discoverCharactersTable.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 15),
-            discoverCharactersTable.leadingAnchor.constraint(equalTo: leadingAnchor),
-            discoverCharactersTable.trailingAnchor.constraint(equalTo: trailingAnchor),
-            discoverCharactersTable.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
-    }
-    
-    func aditionalConfigurations() {
-        backgroundColor = .backgroundBlueColor
-    }
-}
-
+// MARK: Extension TableView
 extension CharactersView: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -77,10 +105,14 @@ extension CharactersView: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section { // isso vai sair daqui e ir pra um configure cell na collection
             case 0:
                 cell.colorCell = .backgroundAliveColor
+                cell.characters = charactersAlive
             case 1:
                 cell.colorCell = .backgroundDeadColor
+                cell.characters = charactersDead
             default:
                 cell.colorCell = .backgroundAlienColor
+                cell.characters = charactersAlien
+
         }
         return cell
     }
@@ -102,4 +134,37 @@ extension CharactersView: UITableViewDelegate, UITableViewDataSource {
         return headerView
     }
     
+}
+
+
+extension CharactersView: UISearchBarDelegate {
+    
+}
+
+// MARK: Extension ViewCode
+extension CharactersView: ViewCode {
+    func buildHierarchy() {
+        addSubview(discoverCharactersTable)
+    }
+    
+    func setUpLayoutConstraints() {
+        NSLayoutConstraint.activate([
+            discoverCharactersTable.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 15),
+            discoverCharactersTable.leadingAnchor.constraint(equalTo: leadingAnchor),
+            discoverCharactersTable.trailingAnchor.constraint(equalTo: trailingAnchor),
+            discoverCharactersTable.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+    }
+    
+    func aditionalConfigurations() {
+        backgroundColor = .backgroundBlueColor
+    }
+}
+
+// MARK: Extension UISearchBar
+extension CharactersView: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let text = searchController.searchBar.text!
+        print(text)
+    }
 }

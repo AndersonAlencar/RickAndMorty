@@ -21,6 +21,11 @@
 		E247D33924EC42D900C20D2A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247D33824EC42D900C20D2A /* Router.swift */; };
 		E247D33B24EC447A00C20D2A /* APIEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247D33A24EC447A00C20D2A /* APIEndPoints.swift */; };
 		E247D33D24EC48B700C20D2A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247D33C24EC48B700C20D2A /* NetworkManager.swift */; };
+		E247D34024EC5AED00C20D2A /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247D33F24EC5AED00C20D2A /* ViewCode.swift */; };
+		E247D34224EC5B4C00C20D2A /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247D34124EC5B4C00C20D2A /* CharactersView.swift */; };
+		E247D34424EC62FF00C20D2A /* CharactersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247D34324EC62FF00C20D2A /* CharactersTableViewCell.swift */; };
+		E247D34624EC75C800C20D2A /* CharactersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247D34524EC75C800C20D2A /* CharactersCollectionViewCell.swift */; };
+		E247D34824ED6E4200C20D2A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247D34724ED6E4200C20D2A /* Colors.swift */; };
 		E281BE6224E6CEDF00A6A23E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E281BE6124E6CEDF00A6A23E /* AppDelegate.swift */; };
 		E281BE6424E6CEDF00A6A23E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E281BE6324E6CEDF00A6A23E /* SceneDelegate.swift */; };
 		E281BE6B24E6CEE200A6A23E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E281BE6A24E6CEE200A6A23E /* Assets.xcassets */; };
@@ -57,6 +62,11 @@
 		E247D33824EC42D900C20D2A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		E247D33A24EC447A00C20D2A /* APIEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoints.swift; sourceTree = "<group>"; };
 		E247D33C24EC48B700C20D2A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E247D33F24EC5AED00C20D2A /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
+		E247D34124EC5B4C00C20D2A /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
+		E247D34324EC62FF00C20D2A /* CharactersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewCell.swift; sourceTree = "<group>"; };
+		E247D34524EC75C800C20D2A /* CharactersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCollectionViewCell.swift; sourceTree = "<group>"; };
+		E247D34724ED6E4200C20D2A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E281BE5E24E6CEDF00A6A23E /* Insane Circuit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Insane Circuit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E281BE6124E6CEDF00A6A23E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E281BE6324E6CEDF00A6A23E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +160,15 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		E247D33E24EC5AC900C20D2A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E247D33F24EC5AED00C20D2A /* ViewCode.swift */,
+				E247D34724ED6E4200C20D2A /* Colors.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		E281BE5524E6CEDF00A6A23E = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +190,7 @@
 		E281BE6024E6CEDF00A6A23E /* Insane Circuit */ = {
 			isa = PBXGroup;
 			children = (
+				E247D33E24EC5AC900C20D2A /* Utils */,
 				E247D32724EC3FC600C20D2A /* Networking */,
 				E247D31C24EC3C4000C20D2A /* Model */,
 				E281BE8424E6D04000A6A23E /* View */,
@@ -207,6 +227,9 @@
 		E281BE8424E6D04000A6A23E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E247D34124EC5B4C00C20D2A /* CharactersView.swift */,
+				E247D34324EC62FF00C20D2A /* CharactersTableViewCell.swift */,
+				E247D34524EC75C800C20D2A /* CharactersCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -336,8 +359,11 @@
 				E281BE8C24E6D0F900A6A23E /* FavoritesViewController.swift in Sources */,
 				E247D33124EC416E00C20D2A /* HTTPMethod.swift in Sources */,
 				E281BE6224E6CEDF00A6A23E /* AppDelegate.swift in Sources */,
+				E247D34624EC75C800C20D2A /* CharactersCollectionViewCell.swift in Sources */,
 				E247D33B24EC447A00C20D2A /* APIEndPoints.swift in Sources */,
+				E247D34824ED6E4200C20D2A /* Colors.swift in Sources */,
 				E247D33924EC42D900C20D2A /* Router.swift in Sources */,
+				E247D34224EC5B4C00C20D2A /* CharactersView.swift in Sources */,
 				E247D32424EC3EE000C20D2A /* Episode.swift in Sources */,
 				E281BE6424E6CEDF00A6A23E /* SceneDelegate.swift in Sources */,
 				E247D33324EC418400C20D2A /* HTTPTask.swift in Sources */,
@@ -349,6 +375,8 @@
 				E247D32F24EC413300C20D2A /* URLParameterEncoder.swift in Sources */,
 				E247D32024EC3CD100C20D2A /* Origin.swift in Sources */,
 				E247D33724EC41B700C20D2A /* EndPointType.swift in Sources */,
+				E247D34024EC5AED00C20D2A /* ViewCode.swift in Sources */,
+				E247D34424EC62FF00C20D2A /* CharactersTableViewCell.swift in Sources */,
 				E281BE8824E6D0CF00A6A23E /* DiscoverViewController.swift in Sources */,
 				E281BE8A24E6D0EA00A6A23E /* SeasonsViewController.swift in Sources */,
 				E247D31E24EC3C4F00C20D2A /* Character.swift in Sources */,

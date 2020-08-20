@@ -15,4 +15,5 @@ extension UIColor {
     static let backgroundAlienColor = UIColor(red: 0.95, green: 0.80, blue: 0.02, alpha: 1.00)
     static let titleDiscoverColor = UIColor(red: 0.02, green: 0.95, blue: 0.86, alpha: 1.00)
     static let subtitlesDiscovercolor = UIColor(red: 0.89, green: 0.89, blue: 0.89, alpha: 1.00)
+    static let tabBarColor = UIColor(red: 0.11, green: 0.15, blue: 0.34, alpha: 1.00)
 }

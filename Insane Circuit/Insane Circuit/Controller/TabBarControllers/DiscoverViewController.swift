@@ -48,6 +48,7 @@ class DiscoverViewController: UIViewController {
 
     lazy var charactersView: CharactersView = {
         let charactersView = CharactersView()
+        charactersView.delegatePresentCharactersView = self
         charactersView.delegatePage = self
         return charactersView
     }()

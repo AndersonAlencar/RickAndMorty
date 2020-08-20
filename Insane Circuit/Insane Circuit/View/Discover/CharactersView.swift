@@ -11,6 +11,7 @@ import UIKit
 class CharactersView: UIView {
     
     weak var delegatePage: RequestNewPageDelegate?
+    weak var delegatePresentCharactersView: DiscoverViewController?
     
     var charactersAlive:[Character] = [Character]()
 //    {
@@ -23,7 +24,6 @@ class CharactersView: UIView {
     
     var charactersDead:[Character] = [Character]()
     var charactersAlien:[Character] = [Character]()
-    
     var imagesAlive:[Data] = [Data]() {
         didSet {
             DispatchQueue.main.async {
@@ -119,6 +119,7 @@ extension CharactersView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCellCharacter", for: indexPath) as! CharactersTableViewCell
         cell.delegatePage = self
+        cell.delegatePresentCharacters = self.delegatePresentCharactersView
         switch indexPath.section { // isso vai sair daqui e ir pra um configure cell na collection
             case 0:
                 cell.colorCell = .backgroundAliveColor

@@ -199,7 +199,7 @@ extension SelectedCharacterView: ViewCode {
         NSLayoutConstraint.activate([
             location.topAnchor.constraint(equalTo: lastSeenLabel.bottomAnchor, constant: 17),
             location.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 58),
-            location.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4)
+            location.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.6)
         ])
         NSLayoutConstraint.activate([
             favorite.topAnchor.constraint(equalTo: lastSeenLabel.bottomAnchor, constant: 17),

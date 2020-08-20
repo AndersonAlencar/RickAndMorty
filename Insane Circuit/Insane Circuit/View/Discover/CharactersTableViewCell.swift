@@ -12,6 +12,7 @@ class CharactersTableViewCell: UITableViewCell {
     
     let manager = NetworkManager()
     weak var delegatePage: RequestNewPageDelegate?
+    weak var delegatePresentCharacters: DiscoverViewController?
     private var pagesAPI = [1,1,1]
     private var totalPage = 15
     
@@ -106,6 +107,15 @@ extension CharactersTableViewCell: UICollectionViewDelegate, UICollectionViewDat
         cell.backgroundColor = colorCell!
         cell.layer.cornerRadius = 10
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let characterSelectedController = SelectedCharacterViewController()
+        characterSelectedController.character = characters[indexPath.row]
+        characterSelectedController.characterImage = images[indexPath.row]
+        let modalcharacters = UINavigationController(rootViewController: characterSelectedController)
+        modalcharacters.modalPresentationStyle = .fullScreen
+        delegatePresentCharacters?.present(modalcharacters, animated: true, completion: nil)
     }
 }
 

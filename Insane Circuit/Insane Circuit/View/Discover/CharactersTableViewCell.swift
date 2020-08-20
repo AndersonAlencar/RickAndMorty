@@ -10,7 +10,15 @@ import UIKit
 
 class CharactersTableViewCell: UITableViewCell {
     
+    let manager = NetworkManager()
+    
     var characters: [Character] = [Character]() {
+        didSet {
+            self.collectionCharacters.reloadData()
+        }
+    }
+    
+    var images:[Data] = [Data]() {
         didSet {
             self.collectionCharacters.reloadData()
         }
@@ -75,7 +83,12 @@ extension CharactersTableViewCell: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CharactersCollectionViewCell
-        cell.configureCell(character: characters[indexPath.row])
+        if images.count == 0 {
+            cell.configureCell(character: characters[indexPath.row], image: nil)
+        } else {
+            cell.configureCell(character: characters[indexPath.row], image: images[indexPath.row])
+        }
+        
         cell.backgroundColor = colorCell!
         cell.layer.cornerRadius = 10
         return cell

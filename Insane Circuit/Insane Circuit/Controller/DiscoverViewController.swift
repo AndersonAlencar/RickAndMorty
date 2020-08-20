@@ -16,6 +16,37 @@ class DiscoverViewController: UIViewController {
     var charactersDead = [Character]()
     var charactersAlien = [Character]()
     
+    var charactersImageAlive:[Data] = [Data]() {
+        didSet {
+            if charactersImageAlive.count%20 == 0 {
+                charactersView.imagesAlive = charactersImageAlive
+            } else {
+                getImagesCharactersAlive(id: charactersAlive[charactersImageAlive.count].id)
+            }
+        }
+    }
+    
+    var charactersImageDead = [Data]() {
+        didSet {
+            if charactersImageDead.count%20 == 0 {
+                charactersView.imagesDead = charactersImageDead
+            } else {
+                getImagesCharactersDead(id: charactersDead[charactersImageDead.count].id)
+            }
+        }
+    }
+
+    var charactersImageAlien = [Data]() {
+        didSet {
+            if charactersImageAlien.count%20 == 0 {
+                charactersView.imagesAlien = charactersImageAlien
+            } else {
+                getImagesCharactersAlien(id: charactersAlien[charactersImageAlien.count].id)
+            }
+        }
+    }
+
+    
     lazy var charactersView: CharactersView = {
         let charactersView = CharactersView()
         return charactersView
@@ -25,6 +56,7 @@ class DiscoverViewController: UIViewController {
         super.viewDidLoad()
         view = charactersView
         navigationItem.title = "Discover Characters"
+        
 
         manager.getCharactersAlive(page: 1) { (characterAlive, error) in
             if let error = error {
@@ -32,7 +64,8 @@ class DiscoverViewController: UIViewController {
             } else {
                 self.charactersAlive = characterAlive!.results
                 self.charactersView.charactersAlive = self.charactersAlive
-                print("Alive")
+                self.getImagesCharactersAlive(id: self.charactersAlive.first!.id)
+               
             }
         }
         
@@ -42,7 +75,7 @@ class DiscoverViewController: UIViewController {
             } else {
                 self.charactersDead = characterDead!.results
                 self.charactersView.charactersDead = self.charactersDead
-                print("Dead")
+                self.getImagesCharactersDead(id: self.charactersDead.first!.id)
             }
         }
         
@@ -52,7 +85,37 @@ class DiscoverViewController: UIViewController {
             } else {
                 self.charactersAlien = characterAlien!.results
                 self.charactersView.charactersAlien = self.charactersAlien
-                print("Alien")
+                self.getImagesCharactersAlien(id: self.charactersAlien.first!.id)
+            }
+        }
+    }
+    
+    func getImagesCharactersAlive(id: Int) {
+        manager.getCharacterImage(id: id) { (data, error) in
+            if let error = error {
+                print("DiscoverController: \(error)")
+            } else {
+                self.charactersImageAlive.append(data!)
+            }
+        }
+    }
+    
+    func getImagesCharactersDead(id: Int) {
+        manager.getCharacterImage(id: id) { (data, error) in
+            if let error = error {
+                print("DiscoverController: \(error)")
+            } else {
+                self.charactersImageDead.append(data!)
+            }
+        }
+    }
+
+    func getImagesCharactersAlien(id: Int) {
+        manager.getCharacterImage(id: id) { (data, error) in
+            if let error = error {
+                print("DiscoverController: \(error)")
+            } else {
+                self.charactersImageAlien.append(data!)
             }
         }
     }

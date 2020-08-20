@@ -10,6 +10,8 @@ import UIKit
 
 class CharactersCollectionViewCell: UICollectionViewCell {
     
+    let manager = NetworkManager()
+    
     lazy var nameCharacter: UILabel = {
         let nameCharacter = UILabel()
         nameCharacter.font = UIFont.systemFont(ofSize: 28, weight: .bold)
@@ -42,19 +44,11 @@ class CharactersCollectionViewCell: UICollectionViewCell {
         return characterImage
     }()
     
-    func configureCell(character: Character) {
+    func configureCell(character: Character, image: Data?) {
         self.nameCharacter.text = character.name.uppercased()
         self.locationCharacter.text = character.location.name
-    }
-    
-    func df(id: Int) {
-        let manager = NetworkManager()
-        manager.getCharacterImage(id: id) { (data, error) in
-            if let error = error {
-                print(error)
-            } else {
-                
-            }
+        if let image = image {
+            self.characterImage.image = UIImage(data: image)
         }
     }
     

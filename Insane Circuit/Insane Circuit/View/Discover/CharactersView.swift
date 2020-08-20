@@ -10,14 +10,19 @@ import UIKit
 
 class CharactersView: UIView {
     
-    var charactersAlive:[Character] = [Character]() {
-        didSet {
-            DispatchQueue.main.async {
-                self.discoverCharactersTable.reloadData()
-            }
-        }
-    }
-    var charactersDead:[Character] = [Character]() {
+    var charactersAlive:[Character] = [Character]()
+//    {
+//        didSet {
+//            DispatchQueue.main.async {
+//                //self.discoverCharactersTable.reloadData()
+//            }
+//        }
+//    }
+    
+    var charactersDead:[Character] = [Character]()
+    var charactersAlien:[Character] = [Character]()
+    
+    var imagesAlive:[Data] = [Data]() {
         didSet {
             DispatchQueue.main.async {
                 self.discoverCharactersTable.reloadData()
@@ -25,7 +30,15 @@ class CharactersView: UIView {
         }
     }
     
-    var charactersAlien:[Character] = [Character]() {
+    var imagesDead:[Data] = [Data]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.discoverCharactersTable.reloadData()
+            }
+        }
+    }
+    
+    var imagesAlien:[Data] = [Data]() {
         didSet {
             DispatchQueue.main.async {
                 self.discoverCharactersTable.reloadData()
@@ -36,6 +49,7 @@ class CharactersView: UIView {
     lazy var discoverCharactersTable: UITableView = {
         let discoverCharactersTable = UITableView()
         discoverCharactersTable.separatorStyle = .none
+        discoverCharactersTable.showsVerticalScrollIndicator = false
         discoverCharactersTable.bounces = false
         discoverCharactersTable.delegate = self
         discoverCharactersTable.dataSource = self
@@ -106,12 +120,15 @@ extension CharactersView: UITableViewDelegate, UITableViewDataSource {
             case 0:
                 cell.colorCell = .backgroundAliveColor
                 cell.characters = charactersAlive
+                cell.images = imagesAlive
             case 1:
                 cell.colorCell = .backgroundDeadColor
                 cell.characters = charactersDead
+                cell.images = imagesDead
             default:
                 cell.colorCell = .backgroundAlienColor
                 cell.characters = charactersAlien
+                cell.images = imagesAlien
 
         }
         return cell

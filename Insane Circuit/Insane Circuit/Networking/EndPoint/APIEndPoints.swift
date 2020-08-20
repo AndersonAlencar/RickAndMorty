@@ -26,12 +26,12 @@ extension APIEndPoints: EndPointType {
     
     var path: String {
         switch self {
-        case .character(let id):
-            return "character/\(id)"
-        case .characterImage(let id):
-            return "character/avatar/\(id).jpeg"
-        default:
-            return "character/"
+            case .character(let id):
+                return "character/\(id)"
+            case .characterImage(let id):
+                return "character/avatar/\(id).jpeg"
+            default:
+                return "character/"
         }
     }
     
@@ -41,14 +41,14 @@ extension APIEndPoints: EndPointType {
     
     var task: HTTPTask<Int> {
         switch self {
-        case .charactersAlive(let page):
-            return .requestParameters(urlParameters: ["status":"alive","page":"\(page)"])
-        case .charactersDead(let page):
-            return .requestParameters(urlParameters: ["status":"dead","page":"\(page)"])
-        case .charactersAlien(let page):
-            return .requestParameters(urlParameters: ["species":"alien","page":"\(page)"])
-        default:
-            return .request
+            case .charactersAlive(let page):
+                return .requestParameters(urlParameters: ["status":"alive","page":"\(page)"])
+            case .charactersDead(let page):
+                return .requestParameters(urlParameters: ["status":"dead","page":"\(page)"])
+            case .charactersAlien(let page):
+                return .requestParameters(urlParameters: ["species":"alien","page":"\(page)"])
+            default:
+                return .request
         }
     }
     

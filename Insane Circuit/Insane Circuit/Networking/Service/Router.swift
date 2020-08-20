@@ -37,13 +37,13 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
         
         do {
             switch route.task {
-            case .request:
-                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            case .requestParameters(let urlParameters):
-                try self.configureURLParameters(urlParameters: urlParameters, request: &request)
-            case .requestParametersAndHeaders(let urlParameters, let additionalHeaders):
-                self.addAditionalHeaders(additionalHeaders, request: &request)
-                try self.configureURLParameters(urlParameters: urlParameters, request: &request)
+                case .request:
+                    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                case .requestParameters(let urlParameters):
+                    try self.configureURLParameters(urlParameters: urlParameters, request: &request)
+                case .requestParametersAndHeaders(let urlParameters, let additionalHeaders):
+                    self.addAditionalHeaders(additionalHeaders, request: &request)
+                    try self.configureURLParameters(urlParameters: urlParameters, request: &request)
             }
             return request
         } catch {

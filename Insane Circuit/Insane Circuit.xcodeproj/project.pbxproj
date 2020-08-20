@@ -35,6 +35,7 @@
 		E281BE8A24E6D0EA00A6A23E /* SeasonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E281BE8924E6D0EA00A6A23E /* SeasonsViewController.swift */; };
 		E281BE8C24E6D0F900A6A23E /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E281BE8B24E6D0F900A6A23E /* FavoritesViewController.swift */; };
 		E281BE8E24E6D45500A6A23E /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E281BE8D24E6D45500A6A23E /* MainTabBarViewController.swift */; };
+		E2A6DB2824EE26A000DEAFF4 /* RequestNewPageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A6DB2724EE26A000DEAFF4 /* RequestNewPageDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		E281BE8924E6D0EA00A6A23E /* SeasonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonsViewController.swift; sourceTree = "<group>"; };
 		E281BE8B24E6D0F900A6A23E /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		E281BE8D24E6D45500A6A23E /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		E2A6DB2724EE26A000DEAFF4 /* RequestNewPageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestNewPageDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				E247D33F24EC5AED00C20D2A /* ViewCode.swift */,
+				E2A6DB2724EE26A000DEAFF4 /* RequestNewPageDelegate.swift */,
 				E247D34724ED6E4200C20D2A /* Colors.swift */,
 			);
 			path = Utils;
@@ -385,6 +388,7 @@
 				E247D33724EC41B700C20D2A /* EndPointType.swift in Sources */,
 				E247D34024EC5AED00C20D2A /* ViewCode.swift in Sources */,
 				E247D34424EC62FF00C20D2A /* CharactersTableViewCell.swift in Sources */,
+				E2A6DB2824EE26A000DEAFF4 /* RequestNewPageDelegate.swift in Sources */,
 				E281BE8824E6D0CF00A6A23E /* DiscoverViewController.swift in Sources */,
 				E281BE8A24E6D0EA00A6A23E /* SeasonsViewController.swift in Sources */,
 				E247D31E24EC3C4F00C20D2A /* Character.swift in Sources */,

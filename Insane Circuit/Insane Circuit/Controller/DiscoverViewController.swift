@@ -46,47 +46,55 @@ class DiscoverViewController: UIViewController {
         }
     }
 
-    
     lazy var charactersView: CharactersView = {
         let charactersView = CharactersView()
+        charactersView.delegatePage = self
         return charactersView
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view = charactersView
+        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Discover Characters"
         
-
-        manager.getCharactersAlive(page: 1) { (characterAlive, error) in
-            if let error = error {
-                print(error)
-            } else {
-                self.charactersAlive = characterAlive!.results
-                self.charactersView.charactersAlive = self.charactersAlive
-                self.getImagesCharactersAlive(id: self.charactersAlive.first!.id)
-               
-            }
-        }
-        
-        manager.getCharactersDead(page: 1) { (characterDead, error) in
-            if let error = error {
-                print(error)
-            } else {
-                self.charactersDead = characterDead!.results
-                self.charactersView.charactersDead = self.charactersDead
-                self.getImagesCharactersDead(id: self.charactersDead.first!.id)
-            }
-        }
-        
-        manager.getCharactersAlien(page: 1) { (characterAlien, error) in
-            if let error = error {
-                print(error)
-            } else {
-                self.charactersAlien = characterAlien!.results
-                self.charactersView.charactersAlien = self.charactersAlien
-                self.getImagesCharactersAlien(id: self.charactersAlien.first!.id)
-            }
+        getCharacters(page: 1, status: "alive")
+        getCharacters(page: 1, status: "dead")
+        getCharacters(page: 1, status: "alien")
+    }
+    
+    func getCharacters(page: Int, status: String) {
+        switch status {
+            case "alive":
+                manager.getCharactersAlive(page: page) { (characterAlive, error) in
+                    if let error = error {
+                        print(error)
+                    } else {
+                        self.charactersAlive.append(contentsOf: characterAlive!.results)
+                        self.charactersView.charactersAlive = self.charactersAlive
+                        self.getImagesCharactersAlive(id: self.charactersAlive[self.charactersAlive.count-20].id)
+                    }
+                }
+            case "dead":
+                manager.getCharactersDead(page: page) { (characterDead, error) in
+                    if let error = error {
+                        print(error)
+                    } else {
+                        self.charactersDead.append(contentsOf: characterDead!.results)
+                        self.charactersView.charactersDead = self.charactersDead
+                        self.getImagesCharactersDead(id: self.charactersDead[self.charactersDead.count-20].id)
+                    }
+                }
+            default:
+                manager.getCharactersAlien(page: page) { (characterAlien, error) in
+                    if let error = error {
+                        print(error)
+                    } else {
+                        self.charactersAlien.append(contentsOf: characterAlien!.results)
+                        self.charactersView.charactersAlien = self.charactersAlien
+                        self.getImagesCharactersAlien(id: self.charactersAlien[self.charactersAlien.count-20].id)
+                    }
+                }
         }
     }
     
@@ -120,4 +128,11 @@ class DiscoverViewController: UIViewController {
         }
     }
 
+}
+
+extension DiscoverViewController: RequestNewPageDelegate {
+    func requestNewPageAPI(page: Int, status: String) {
+        print("ok ele chamou page:\(page) e status: \(status)")
+        getCharacters(page: page, status: status)
+    }
 }

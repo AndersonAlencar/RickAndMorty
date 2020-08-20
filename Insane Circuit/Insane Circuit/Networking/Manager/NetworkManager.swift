@@ -28,20 +28,20 @@ struct NetworkManager {
     
     func handleNetworkResponse(_ reponse: HTTPURLResponse) -> Result<String> {
         switch reponse.statusCode {
-        case 200...299:
-            return .success
-        case 401...500:
-            return .failure(NetworkResponse.authenticationError.rawValue)
-        case 501...599:
-            return .failure(NetworkResponse.badRequest.rawValue)
-        case 600:
-            return .failure(NetworkResponse.outdated.rawValue)
-        default:
-            return .failure(NetworkResponse.falied.rawValue)
+            case 200...299:
+                return .success
+            case 401...500:
+                return .failure(NetworkResponse.authenticationError.rawValue)
+            case 501...599:
+                return .failure(NetworkResponse.badRequest.rawValue)
+            case 600:
+                return .failure(NetworkResponse.outdated.rawValue)
+            default:
+                return .failure(NetworkResponse.falied.rawValue)
         }
     }
     
-    func getCharacter(id: Int,completion: @escaping (_ places: Character?, _ error: String?)->()) {
+    func getCharacter(id: Int,completion: @escaping (_ places: Character?, _ error: String?) -> Void) {
         router.request(.character(id: id)) { (data, _, error) in
             if error != nil {
                 completion(nil,"Please check your network connection")
@@ -59,7 +59,7 @@ struct NetworkManager {
         }
     }
     
-    func getCharactersAlive(page: Int,completion: @escaping (_ places: CharacterResults?, _ error: String?)->()) {
+    func getCharactersAlive(page: Int,completion: @escaping (_ places: CharacterResults?, _ error: String?) -> Void) {
         router.request(.charactersAlive(page: page)) { (data, _, error) in
             if error != nil {
                 completion(nil,"Please check your network connection")
@@ -77,7 +77,7 @@ struct NetworkManager {
         }
     }
     
-    func getCharactersDead(page: Int,completion: @escaping (_ places: CharacterResults?, _ error: String?)->()) {
+    func getCharactersDead(page: Int,completion: @escaping (_ places: CharacterResults?, _ error: String?) -> Void) {
         router.request(.charactersDead(page: page)) { (data, _, error) in
             if error != nil {
                 completion(nil,"Please check your network connection")
@@ -95,7 +95,7 @@ struct NetworkManager {
         }
     }
     
-    func getCharactersAlien(page: Int,completion: @escaping (_ places: CharacterResults?, _ error: String?)->()) {
+    func getCharactersAlien(page: Int,completion: @escaping (_ places: CharacterResults?, _ error: String?) -> Void) {
         router.request(.charactersAlien(page: page)) { (data, _, error) in
             if error != nil {
                 completion(nil,"Please check your network connection")
@@ -113,20 +113,14 @@ struct NetworkManager {
         }
     }
     
-    func getCharacterImage(id: Int,completion: @escaping (_ places: Data?, _ error: String?)->()) {
+    func getCharacterImage(id: Int,completion: @escaping (_ places: Data?, _ error: String?) -> Void) {
         router.request(.characterImage(id: id)) { (data, _, error) in
             if error != nil {
                 completion(nil,"Please check your network connection")
             }
             
             if let data = data {
-                do {
-                    //let characters = try JSONDecoder().decode(Data.self, from: data)
-                    completion(data,nil)
-                } catch {
-                    completion(nil,NetworkResponse.unableToDecode.rawValue)
-                }
-                
+                completion(data,nil)
             }
         }
     }

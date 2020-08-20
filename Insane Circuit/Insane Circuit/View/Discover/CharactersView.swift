@@ -10,6 +10,8 @@ import UIKit
 
 class CharactersView: UIView {
     
+    weak var delegatePage: RequestNewPageDelegate?
+    
     var charactersAlive:[Character] = [Character]()
 //    {
 //        didSet {
@@ -116,6 +118,7 @@ extension CharactersView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCellCharacter", for: indexPath) as! CharactersTableViewCell
+        cell.delegatePage = self
         switch indexPath.section { // isso vai sair daqui e ir pra um configure cell na collection
             case 0:
                 cell.colorCell = .backgroundAliveColor
@@ -153,6 +156,12 @@ extension CharactersView: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+extension CharactersView: RequestNewPageDelegate {
+    func requestNewPageAPI(page: Int, status: String) {
+        delegatePage?.requestNewPageAPI(page: page, status: status)
+    }
+    
+}
 
 extension CharactersView: UISearchBarDelegate {
     

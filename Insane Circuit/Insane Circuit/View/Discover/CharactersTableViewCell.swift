@@ -11,12 +11,11 @@ import UIKit
 class CharactersTableViewCell: UITableViewCell {
     
     let manager = NetworkManager()
+    weak var delegatePage: RequestNewPageDelegate?
+    private var pagesAPI = [1,1,1]
+    private var totalPage = 15
     
-    var characters: [Character] = [Character]() {
-        didSet {
-            self.collectionCharacters.reloadData()
-        }
-    }
+    var characters: [Character] = [Character]()
     
     var images:[Data] = [Data]() {
         didSet {
@@ -88,7 +87,22 @@ extension CharactersTableViewCell: UICollectionViewDelegate, UICollectionViewDat
         } else {
             cell.configureCell(character: characters[indexPath.row], image: images[indexPath.row])
         }
-        
+        if indexPath.row % totalPage == 0 && indexPath.row != 0 {
+            print("chegou no 15")
+            print(indexPath.row)
+            switch characters[indexPath.row].status {
+                case "Alive":
+                    pagesAPI[0] += 1
+                    delegatePage?.requestNewPageAPI(page: pagesAPI[0], status: "alive" )
+                case "Dead":
+                    pagesAPI[1] += 1
+                    delegatePage?.requestNewPageAPI(page: pagesAPI[1], status: "dead")
+                default:
+                    pagesAPI[2] += 1
+                    delegatePage?.requestNewPageAPI(page: pagesAPI[2], status: "alien")
+            }
+            totalPage += 15
+        }
         cell.backgroundColor = colorCell!
         cell.layer.cornerRadius = 10
         return cell

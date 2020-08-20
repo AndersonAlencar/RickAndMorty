@@ -61,6 +61,7 @@ class CharactersCollectionViewCell: UICollectionViewCell {
     }
     
     override func layoutSubviews() {
+        //characterImage.roundCorners(corners: [.topRight, .topLeft], radius: 10)
         setUp()
     }
 }
@@ -96,6 +97,16 @@ extension CharactersCollectionViewCell: ViewCode {
     }
     
     func aditionalConfigurations() {
+        //self.backgroundColor = .backgroundAliveColor
         self.layer.masksToBounds = true
+    }
+}
+
+extension UIView {
+   func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
     }
 }

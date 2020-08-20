@@ -31,9 +31,9 @@ class CharactersTableViewCell: UITableViewCell {
         let collectionCharacters = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionCharacters.register(CharactersCollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
         collectionCharacters.backgroundColor = .backgroundBlueColor
-        collectionCharacters.showsHorizontalScrollIndicator = false
-        collectionCharacters.isPagingEnabled = false
-        collectionCharacters.contentInsetAdjustmentBehavior = .never
+        collectionCharacters.showsHorizontalScrollIndicator = false//
+        collectionCharacters.isPagingEnabled = true//
+        collectionCharacters.contentInsetAdjustmentBehavior = .never//
         collectionCharacters.collectionViewLayout = flowLayout
         collectionCharacters.delegate = self
         collectionCharacters.dataSource = self

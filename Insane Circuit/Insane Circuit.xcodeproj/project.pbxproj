@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E20F494724EF44AE00BC6261 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F494624EF44AE00BC6261 /* FavoritesView.swift */; };
 		E247D31E24EC3C4F00C20D2A /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247D31D24EC3C4F00C20D2A /* Character.swift */; };
 		E247D32024EC3CD100C20D2A /* Origin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247D31F24EC3CD100C20D2A /* Origin.swift */; };
 		E247D32224EC3E9900C20D2A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247D32124EC3E9900C20D2A /* Location.swift */; };
@@ -26,6 +27,7 @@
 		E247D34424EC62FF00C20D2A /* CharactersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247D34324EC62FF00C20D2A /* CharactersTableViewCell.swift */; };
 		E247D34624EC75C800C20D2A /* CharactersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247D34524EC75C800C20D2A /* CharactersCollectionViewCell.swift */; };
 		E247D34824ED6E4200C20D2A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247D34724ED6E4200C20D2A /* Colors.swift */; };
+		E252E7D024EF5EBB00421A23 /* PersistenceFavoritesDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E252E7CF24EF5EBB00421A23 /* PersistenceFavoritesDefaults.swift */; };
 		E281BE6224E6CEDF00A6A23E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E281BE6124E6CEDF00A6A23E /* AppDelegate.swift */; };
 		E281BE6424E6CEDF00A6A23E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E281BE6324E6CEDF00A6A23E /* SceneDelegate.swift */; };
 		E281BE6B24E6CEE200A6A23E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E281BE6A24E6CEE200A6A23E /* Assets.xcassets */; };
@@ -52,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E20F494624EF44AE00BC6261 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		E247D31D24EC3C4F00C20D2A /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		E247D31F24EC3CD100C20D2A /* Origin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Origin.swift; sourceTree = "<group>"; };
 		E247D32124EC3E9900C20D2A /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 		E247D34324EC62FF00C20D2A /* CharactersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewCell.swift; sourceTree = "<group>"; };
 		E247D34524EC75C800C20D2A /* CharactersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCollectionViewCell.swift; sourceTree = "<group>"; };
 		E247D34724ED6E4200C20D2A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		E252E7CF24EF5EBB00421A23 /* PersistenceFavoritesDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceFavoritesDefaults.swift; sourceTree = "<group>"; };
 		E281BE5E24E6CEDF00A6A23E /* Insane Circuit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Insane Circuit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E281BE6124E6CEDF00A6A23E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E281BE6324E6CEDF00A6A23E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +112,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E20F494524EF447000BC6261 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				E20F494624EF44AE00BC6261 /* FavoritesView.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		E247D31C24EC3C4000C20D2A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +190,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		E252E7CE24EF5E8100421A23 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				E252E7CF24EF5EBB00421A23 /* PersistenceFavoritesDefaults.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
 		E2685A0F24EDC95600C74D4C /* Discover */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +229,7 @@
 		E281BE6024E6CEDF00A6A23E /* Insane Circuit */ = {
 			isa = PBXGroup;
 			children = (
+				E252E7CE24EF5E8100421A23 /* UserDefaults */,
 				E247D33E24EC5AC900C20D2A /* Utils */,
 				E247D32724EC3FC600C20D2A /* Networking */,
 				E247D31C24EC3C4000C20D2A /* Model */,
@@ -245,8 +266,9 @@
 		E281BE8424E6D04000A6A23E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E2A6DB2B24EEAB4800DEAFF4 /* SelectedCharacter */,
 				E2685A0F24EDC95600C74D4C /* Discover */,
+				E2A6DB2B24EEAB4800DEAFF4 /* SelectedCharacter */,
+				E20F494524EF447000BC6261 /* Favorites */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -399,6 +421,7 @@
 				E247D33B24EC447A00C20D2A /* APIEndPoints.swift in Sources */,
 				E247D34824ED6E4200C20D2A /* Colors.swift in Sources */,
 				E247D33924EC42D900C20D2A /* Router.swift in Sources */,
+				E252E7D024EF5EBB00421A23 /* PersistenceFavoritesDefaults.swift in Sources */,
 				E247D34224EC5B4C00C20D2A /* CharactersView.swift in Sources */,
 				E247D32424EC3EE000C20D2A /* Episode.swift in Sources */,
 				E281BE6424E6CEDF00A6A23E /* SceneDelegate.swift in Sources */,
@@ -411,6 +434,7 @@
 				E247D32F24EC413300C20D2A /* URLParameterEncoder.swift in Sources */,
 				E247D32024EC3CD100C20D2A /* Origin.swift in Sources */,
 				E247D33724EC41B700C20D2A /* EndPointType.swift in Sources */,
+				E20F494724EF44AE00BC6261 /* FavoritesView.swift in Sources */,
 				E247D34024EC5AED00C20D2A /* ViewCode.swift in Sources */,
 				E2CADBF524EEB47600527D21 /* EpisodesCollectionViewCell.swift in Sources */,
 				E247D34424EC62FF00C20D2A /* CharactersTableViewCell.swift in Sources */,

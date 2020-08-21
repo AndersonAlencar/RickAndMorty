@@ -10,9 +10,10 @@ import UIKit
 
 class SelectedCharacterView: UIView {
 
-    lazy var checker: Bool = {
+    lazy var checkFavoritePressed: Bool = {
        return false
     }()
+    var persistenceUserDefaults = Persistence()
     
     var character: Character?
     var image: Data?
@@ -144,14 +145,22 @@ class SelectedCharacterView: UIView {
         
         lastSeenLabel.textColor = .labelSecondaryColor
         episodesLabel.textColor = .labelSecondaryColor
+        
+        //verificar a persistencia do objeto pra mudar o botão
+        if persistenceUserDefaults.existObjetc(object: character!.id) {
+            checkFavoritePressed = true
+            favorite.setImage(UIImage(named: "Favoritado"), for: .normal)
+        }
     }
     
     @objc func clickFavorite(sender: UIButton!) {
-        checker = !checker
-        if checker {
+        checkFavoritePressed = !checkFavoritePressed
+        if checkFavoritePressed {
             favorite.setImage(UIImage(named: "Favoritado"), for: .normal)
+            persistenceUserDefaults.add(object: character!.id)
         } else {
             favorite.setImage(UIImage(named: "Favoritar"), for: .normal)
+            persistenceUserDefaults.remove(object: character!.id)
         }
     }
 }

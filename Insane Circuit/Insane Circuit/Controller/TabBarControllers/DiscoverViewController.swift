@@ -10,7 +10,7 @@ import UIKit
 
 class DiscoverViewController: UIViewController {
 
-    //MARK: Variables of class
+    // MARK: Variables of class
 
     let manager = NetworkManager()
     var charactersAlive = [Character]()
@@ -54,7 +54,7 @@ class DiscoverViewController: UIViewController {
         return charactersView
     }()
 
-    //MARK: viewDidLoad
+    // MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         view = charactersView

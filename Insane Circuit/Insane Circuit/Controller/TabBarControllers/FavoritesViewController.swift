@@ -27,13 +27,15 @@ class FavoritesViewController: UIViewController {
                 getImage(id: charactersFavorites[imagesFavorites.count].id)
             } else {
                 favoritesView.imagesCharacters = imagesFavorites
-                imagesFavorites = [] // garante que ele não use appende para adicionar imagens repetidas
+                imagesFavorites.removeAll()  // garante que ele não use appende para adicionar imagens repetidas
             }
         }
     }
 
     lazy var favoritesView: FavoritesView = {
-        return FavoritesView()
+        let favoritesView = FavoritesView()
+        favoritesView.presentCharacterDelegate = self
+        return favoritesView
     }()
 
     override func viewDidLoad() {

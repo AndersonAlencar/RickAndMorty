@@ -10,6 +10,8 @@ import UIKit
 
 class FavoritesView: UIView {
     
+    weak var presentCharacterDelegate: FavoritesViewController?
+    
     var characters = [Character]() 
     var imagesCharacters = [Data]() {
         didSet {
@@ -97,9 +99,17 @@ extension FavoritesView : UICollectionViewDelegate, UICollectionViewDataSource {
         } else {
             cell.configureCell(character: characters[indexPath.row], image: imagesCharacters[indexPath.row])
         }
-        //cell.backgroundColor = .backgroundAliveColor
         cell.layer.cornerRadius = 10
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let characterSelectedController = SelectedCharacterViewController()
+        characterSelectedController.character = characters[indexPath.row]
+        characterSelectedController.characterImage = imagesCharacters[indexPath.row]
+        let modalcharacters = UINavigationController(rootViewController: characterSelectedController)
+        modalcharacters.modalPresentationStyle = .fullScreen
+        presentCharacterDelegate?.present(modalcharacters, animated: true, completion: nil)
     }
     
 }

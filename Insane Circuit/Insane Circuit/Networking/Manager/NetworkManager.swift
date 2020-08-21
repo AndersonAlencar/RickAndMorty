@@ -124,4 +124,22 @@ struct NetworkManager {
             }
         }
     }
+    
+    func getFavoritesCharacters(ids: [Int],completion: @escaping (_ places: [Character]?, _ error: String?) -> Void) {
+        router.request(.charactersFavorites(ids: ids)) { (data, _, error) in
+            if error != nil {
+                completion(nil,"Please check your network connection")
+            }
+            
+            if let data = data {
+                do {
+                    let characters = try JSONDecoder().decode([Character].self, from: data)
+                    completion(characters,nil)
+                } catch {
+                    completion(nil,NetworkResponse.unableToDecode.rawValue)
+                }
+                
+            }
+        }
+    }
 }

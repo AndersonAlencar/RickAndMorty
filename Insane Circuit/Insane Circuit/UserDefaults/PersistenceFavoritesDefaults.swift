@@ -10,7 +10,7 @@ import Foundation
 
 class Persistence {
     let defaults = UserDefaults.standard
-    var objects: [Int] = []
+    private var objects: [Int] = []
     private var key = "Favoritos"
 
     init() {
@@ -58,5 +58,19 @@ class Persistence {
     
     func existObjetc(object: Int) -> Bool {
         self.objects.contains(object) == true ? true:false
+    }
+    
+    func persistedObjects() -> [Int]? {
+        var persistedObjects = [Int]()
+        let decoder = JSONDecoder()
+        if let data = defaults.value(forKey: key) as? Data {
+            do {
+                let taskData = try decoder.decode([Int].self, from: data)
+                persistedObjects = taskData
+            } catch {
+                print("Error load persisted objects: \(error.localizedDescription)")
+            }
+        }
+        return persistedObjects.count == 0 ? nil : persistedObjects
     }
 }

@@ -10,16 +10,15 @@ import UIKit
 
 class FavoritesView: UIView {
     
-    var characters = [Character]() {
+    var characters = [Character]() 
+    var imagesCharacters = [Data]() {
         didSet {
             DispatchQueue.main.async {
-                print("reload")
                 self.collectionFavorites.reloadData()
                 self.emptyCharacters.isHidden = true
             }
         }
     }
-    var imagesCharacters = [Data]()
 
     lazy var collectionFavorites: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()

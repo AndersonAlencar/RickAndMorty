@@ -14,6 +14,7 @@ enum APIEndPoints {
     case charactersDead(page: Int)
     case charactersAlien(page: Int)
     case characterImage(id: Int)
+    case charactersFavorites(ids: [Int])
 }
 
 extension APIEndPoints: EndPointType {
@@ -30,6 +31,12 @@ extension APIEndPoints: EndPointType {
                 return "character/\(id)"
             case .characterImage(let id):
                 return "character/avatar/\(id).jpeg"
+            case .charactersFavorites(let ids):
+                var path = "character/"
+                for (index,id) in ids.enumerated() {
+                    path += index == ids.count-1 ? "\(id)":"\(id),"
+                }
+                return path
             default:
                 return "character/"
         }

@@ -10,9 +10,12 @@ import UIKit
 
 class DiscoverViewController: UIViewController {
 
+    // MARK: cache
+    let managerCache = PersistenceCache()
+    
     // MARK: Variables of class
 
-    let manager = NetworkManager()
+    let managerNetwork = NetworkManager()
     var charactersAlive = [Character]()
     var charactersDead = [Character]()
     var charactersAlien = [Character]()
@@ -21,6 +24,8 @@ class DiscoverViewController: UIViewController {
         didSet {
             if charactersImageAlive.count%20 == 0 {
                 charactersView.imagesAlive = charactersImageAlive
+                managerCache.writeFileFromData(objects: charactersAlive, imageObjects: charactersImageAlive, type: .alive)
+
             } else {
                 getImagesCharactersAlive(id: charactersAlive[charactersImageAlive.count].id)
             }
@@ -31,6 +36,8 @@ class DiscoverViewController: UIViewController {
         didSet {
             if charactersImageDead.count%20 == 0 {
                 charactersView.imagesDead = charactersImageDead
+                managerCache.writeFileFromData(objects: charactersDead, imageObjects: charactersImageDead, type: .dead)
+
             } else {
                 getImagesCharactersDead(id: charactersDead[charactersImageDead.count].id)
             }
@@ -41,6 +48,7 @@ class DiscoverViewController: UIViewController {
         didSet {
             if charactersImageAlien.count%20 == 0 {
                 charactersView.imagesAlien = charactersImageAlien
+                managerCache.writeFileFromData(objects: charactersAlien, imageObjects: charactersImageAlien, type: .alien)
             } else {
                 getImagesCharactersAlien(id: charactersAlien[charactersImageAlien.count].id)
             }
@@ -69,7 +77,7 @@ class DiscoverViewController: UIViewController {
     func getCharacters(page: Int, status: String) {
         switch status {
             case "alive":
-                manager.getCharactersAlive(page: page) { (characterAlive, error) in
+                managerNetwork.getCharactersAlive(page: page) { (characterAlive, error) in
                     if let error = error {
                         print(error)
                     } else {
@@ -79,7 +87,7 @@ class DiscoverViewController: UIViewController {
                     }
                 }
             case "dead":
-                manager.getCharactersDead(page: page) { (characterDead, error) in
+                managerNetwork.getCharactersDead(page: page) { (characterDead, error) in
                     if let error = error {
                         print(error)
                     } else {
@@ -89,7 +97,7 @@ class DiscoverViewController: UIViewController {
                     }
                 }
             default:
-                manager.getCharactersAlien(page: page) { (characterAlien, error) in
+                managerNetwork.getCharactersAlien(page: page) { (characterAlien, error) in
                     if let error = error {
                         print(error)
                     } else {
@@ -102,7 +110,7 @@ class DiscoverViewController: UIViewController {
     }
     
     func getImagesCharactersAlive(id: Int) {
-        manager.getCharacterImage(id: id) { (data, error) in
+        managerNetwork.getCharacterImage(id: id) { (data, error) in
             if let error = error {
                 print("DiscoverController: \(error)")
             } else {
@@ -112,7 +120,7 @@ class DiscoverViewController: UIViewController {
     }
     
     func getImagesCharactersDead(id: Int) {
-        manager.getCharacterImage(id: id) { (data, error) in
+        managerNetwork.getCharacterImage(id: id) { (data, error) in
             if let error = error {
                 print("DiscoverController: \(error)")
             } else {
@@ -122,7 +130,7 @@ class DiscoverViewController: UIViewController {
     }
 
     func getImagesCharactersAlien(id: Int) {
-        manager.getCharacterImage(id: id) { (data, error) in
+        managerNetwork.getCharacterImage(id: id) { (data, error) in
             if let error = error {
                 print("DiscoverController: \(error)")
             } else {

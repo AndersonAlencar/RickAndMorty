@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E20F494724EF44AE00BC6261 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F494624EF44AE00BC6261 /* FavoritesView.swift */; };
+		E2367E7324F9884B00071C6C /* Recheability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2367E7224F9884B00071C6C /* Recheability.swift */; };
 		E247D31E24EC3C4F00C20D2A /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247D31D24EC3C4F00C20D2A /* Character.swift */; };
 		E247D32024EC3CD100C20D2A /* Origin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247D31F24EC3CD100C20D2A /* Origin.swift */; };
 		E247D32224EC3E9900C20D2A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247D32124EC3E9900C20D2A /* Location.swift */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		E20F494624EF44AE00BC6261 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		E2367E7224F9884B00071C6C /* Recheability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recheability.swift; sourceTree = "<group>"; };
 		E247D31D24EC3C4F00C20D2A /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		E247D31F24EC3CD100C20D2A /* Origin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Origin.swift; sourceTree = "<group>"; };
 		E247D32124EC3E9900C20D2A /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				E252E7D224EFFC6400421A23 /* PersistenceCache.swift */,
+				E2367E7224F9884B00071C6C /* Recheability.swift */,
 			);
 			path = FileManager;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				E247D32D24EC40CF00C20D2A /* ParameterEncoding.swift in Sources */,
 				E247D33524EC41A100C20D2A /* NetworkRouter.swift in Sources */,
 				E247D33D24EC48B700C20D2A /* NetworkManager.swift in Sources */,
+				E2367E7324F9884B00071C6C /* Recheability.swift in Sources */,
 				E247D32624EC3FA000C20D2A /* CharacterResults.swift in Sources */,
 				E247D32F24EC413300C20D2A /* URLParameterEncoder.swift in Sources */,
 				E247D32024EC3CD100C20D2A /* Origin.swift in Sources */,

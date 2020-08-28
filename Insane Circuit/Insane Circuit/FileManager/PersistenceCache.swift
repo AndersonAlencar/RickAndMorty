@@ -50,23 +50,18 @@ class PersistenceCache {
                 default:
                     dataBase.charactersAlien = objectsForPersist
             }
-            //self.writeFile(object: dataBase)  PERAI DEOKFJKGSDKFSKDFSMGDFKMSGFDKSGKDGKFGSKDJFGKSJDFGKJSDGFKSGDKFJGSKDJGFKSGDFKSF
+            self.writeFile(object: dataBase)
         }
     }
     
-    func writeFile(object: DataBase, type: KeyType) {
+    func writeFile(object: DataBase) {
         let file = "PersistedCharacters.plist"
-        //var jsonString = ""
         do {
             let jsonData = try JSONEncoder().encode(object)
-            //jsonString = String(data: jsonData, encoding: .utf8)!
              if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
                  let fileURL = dir.appendingPathComponent(file)
-                 //writing
                  do {
                      try jsonData.write(to: fileURL)
-                     print("DEu bom")
-                     //try jsonString.write(to: fileURL, atomically: false, encoding: .utf8)
                  } catch {
                      print("cant write…")
                  }

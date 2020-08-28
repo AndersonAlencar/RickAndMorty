@@ -28,6 +28,8 @@ type_name:
   excluded: iPhone # excluded via string
 switch_case_alignment:
     indented_cases: true
+cyclomatic_complexity:
+    ignores_case_statements: true
 #identifier_name:
 #  min_length: # only min_length
 #    error: 4 # only error

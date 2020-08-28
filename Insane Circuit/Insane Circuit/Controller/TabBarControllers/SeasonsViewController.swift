@@ -13,8 +13,7 @@ class SeasonsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
-
-        // Do any additional setup after loading the view.
+        //one day this screen comes out
     }
 
 }

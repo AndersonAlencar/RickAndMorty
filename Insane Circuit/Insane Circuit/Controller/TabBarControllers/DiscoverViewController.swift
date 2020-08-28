@@ -12,7 +12,7 @@ class DiscoverViewController: UIViewController {
 
     // MARK: cache
     let managerCache = PersistenceCache()
-    
+
     // MARK: Variables of class
 
     let managerNetwork = NetworkManager()
@@ -22,35 +22,45 @@ class DiscoverViewController: UIViewController {
     
     var charactersImageAlive:[Data] = [Data]() {
         didSet {
-            if charactersImageAlive.count%20 == 0 {
+            if charactersImageAlive.count % 20 == 0 {
+                charactersView.charactersAlive = charactersAlive
                 charactersView.imagesAlive = charactersImageAlive
                 managerCache.writeFileFromData(objects: charactersAlive, imageObjects: charactersImageAlive, type: .alive)
 
             } else {
-                getImagesCharactersAlive(id: charactersAlive[charactersImageAlive.count].id)
+                if Reachability.isConnectedToNetwork() {
+                    getImagesCharactersAlive(id: charactersAlive[charactersImageAlive.count].id)
+                    print("Internet Connection Available!")
+                }
             }
         }
     }
     
     var charactersImageDead = [Data]() {
         didSet {
-            if charactersImageDead.count%20 == 0 {
+            if charactersImageDead.count % 20 == 0 {
+                charactersView.charactersDead = charactersDead
                 charactersView.imagesDead = charactersImageDead
                 managerCache.writeFileFromData(objects: charactersDead, imageObjects: charactersImageDead, type: .dead)
 
             } else {
-                getImagesCharactersDead(id: charactersDead[charactersImageDead.count].id)
+                if Reachability.isConnectedToNetwork() {
+                    getImagesCharactersDead(id: charactersDead[charactersImageDead.count].id)
+                }
             }
         }
     }
 
     var charactersImageAlien = [Data]() {
         didSet {
-            if charactersImageAlien.count%20 == 0 {
+            if charactersImageAlien.count % 20 == 0 {
+                charactersView.charactersAlien = charactersAlien
                 charactersView.imagesAlien = charactersImageAlien
                 managerCache.writeFileFromData(objects: charactersAlien, imageObjects: charactersImageAlien, type: .alien)
             } else {
-                getImagesCharactersAlien(id: charactersAlien[charactersImageAlien.count].id)
+                if Reachability.isConnectedToNetwork() {
+                    getImagesCharactersAlien(id: charactersAlien[charactersImageAlien.count].id)
+                }
             }
         }
     }
@@ -68,18 +78,25 @@ class DiscoverViewController: UIViewController {
         view = charactersView
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Discover Characters"
-        
+
         getCharacters(page: 1, status: "alive")
         getCharacters(page: 1, status: "dead")
         getCharacters(page: 1, status: "alien")
     }
     
-    func getCharacters(page: Int, status: String) {
+     func getCharacters(page: Int, status: String) {
+        let dataCache = managerCache.read()
         switch status {
             case "alive":
                 managerNetwork.getCharactersAlive(page: page) { (characterAlive, error) in
                     if let error = error {
-                        print(error)
+                        print("Get API Characters Alive: \(error)")
+                        if let charactersAlive = dataCache.charactersAlive {
+                            for characterData in charactersAlive {
+                                self.charactersAlive.append(characterData.character)
+                                self.charactersImageAlive.append(characterData.image)
+                            }
+                        }
                     } else {
                         self.charactersAlive.append(contentsOf: characterAlive!.results)
                         self.charactersView.charactersAlive = self.charactersAlive
@@ -89,7 +106,13 @@ class DiscoverViewController: UIViewController {
             case "dead":
                 managerNetwork.getCharactersDead(page: page) { (characterDead, error) in
                     if let error = error {
-                        print(error)
+                        print("Get API Characters Dead: \(error)")
+                        if let charactersAlive = dataCache.charactersDead {
+                            for characterData in charactersAlive {
+                                self.charactersDead.append(characterData.character)
+                                self.charactersImageDead.append(characterData.image)
+                            }
+                        }
                     } else {
                         self.charactersDead.append(contentsOf: characterDead!.results)
                         self.charactersView.charactersDead = self.charactersDead
@@ -99,7 +122,13 @@ class DiscoverViewController: UIViewController {
             default:
                 managerNetwork.getCharactersAlien(page: page) { (characterAlien, error) in
                     if let error = error {
-                        print(error)
+                        print("Get API Characters Alien: \(error)")
+                        if let charactersAlive = dataCache.charactersAlien {
+                            for characterData in charactersAlive {
+                                self.charactersAlien.append(characterData.character)
+                                self.charactersImageAlien.append(characterData.image)
+                            }
+                        }
                     } else {
                         self.charactersAlien.append(contentsOf: characterAlien!.results)
                         self.charactersView.charactersAlien = self.charactersAlien

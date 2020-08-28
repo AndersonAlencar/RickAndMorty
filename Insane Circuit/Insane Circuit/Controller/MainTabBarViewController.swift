@@ -26,10 +26,5 @@ class MainTabBarViewController: UITabBarController {
         
         let tabBarList = [discover, seasons, favorites]
         viewControllers = tabBarList
-        
-        let manager = PersistenceCache()
-        let reads = manager.read()
-        print(reads)
-        print("deu bom")
     }
 }

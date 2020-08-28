@@ -14,10 +14,6 @@ struct PersistedCharacter: Codable {
     var image: Data
 }
 
-
-let person = Character(id: 10, name: "richa sasnchexxx", status: "Alive", species: "Humam", type: "human Earth", gender: "Male", origin: Origin(name: "Earth", url: "tururu"), location: CharacterLocation(name: "Earth 123", url: "tururu1"), image: "image turu", episode: ["sdsd3","sdsd4","eefdf10"], url: "tururuperson1")
-let image  = UIImage(named: "rick")!.jpegData(compressionQuality: 1)!
-
 class PersistenceCache {
     
     let mypersistence = [PersistedCharacter(character: person, image: image),PersistedCharacter(character: person, image: image)]

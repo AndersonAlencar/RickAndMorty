@@ -98,7 +98,6 @@ extension CharactersCollectionViewCell: ViewCode {
             locationCharacter.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             locationCharacter.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
             locationCharacter.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15)
-            //locationCharacter.heightAnchor.constraint(equalToConstant: <#T##CGFloat#>)
         ])
     }
     

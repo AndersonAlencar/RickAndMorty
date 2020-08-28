@@ -14,13 +14,6 @@ class CharactersView: UIView {
     weak var delegatePresentCharactersView: DiscoverViewController?
     
     var charactersAlive:[Character] = [Character]()
-//    {
-//        didSet {
-//            DispatchQueue.main.async {
-//                //self.discoverCharactersTable.reloadData()
-//            }
-//        }
-//    }
     
     var charactersDead:[Character] = [Character]()
     var charactersAlien:[Character] = [Character]()

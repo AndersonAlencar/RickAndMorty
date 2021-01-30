@@ -18,9 +18,7 @@ enum APIEndPoints {
 }
 
 extension APIEndPoints: EndPointType {
-    
-    typealias GenericCodable = Int // Lembrar de deletar
-    
+        
     var baseURL: URL {
         return URL(string: "https://rickandmortyapi.com/api/")!
     }

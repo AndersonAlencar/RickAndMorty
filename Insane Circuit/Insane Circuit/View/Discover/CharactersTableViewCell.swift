@@ -72,7 +72,7 @@ extension CharactersTableViewCell: ViewCode {
     }
     
     func aditionalConfigurations() {
-        self.backgroundColor = .white
+        self.backgroundColor = .backgroundBlueColor
     }
 }
 

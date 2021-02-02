@@ -19,7 +19,7 @@ enum APIEndPoints {
 
 extension APIEndPoints: EndPointType {
         
-    var baseURL: URL {
+    var baseURL:URL {
         return URL(string: "https://rickandmortyapi.com/api/")!
     }
     

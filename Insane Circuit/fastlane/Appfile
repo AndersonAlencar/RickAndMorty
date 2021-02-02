@@ -1,0 +1,8 @@
+app_identifier("com.andersonalencar.Insane-Circuit") # The bundle identifier of your app
+apple_id("anderson.sjav@gmail.com") # Your Apple email address
+
+itc_team_id("121651390") # App Store Connect Team ID
+team_id("3XAHB7RJJD") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

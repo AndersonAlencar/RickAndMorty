@@ -1,6 +1,7 @@
 disabled_rules: # rule identifiers to exclude from running
   - colon
   - comma
+  - force_cast
   - control_statement
   - trailing_whitespace
   - identifier_name

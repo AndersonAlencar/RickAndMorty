@@ -13,12 +13,15 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
+
+ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"] = "okpm-sfyt-fjpu-unck"
 default_platform(:ios)
 
 platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :beta do
-    build_app(scheme: "Insane Circuit")
-    upload_to_testflight
+    build_app(export_xcargs: "-allowProvisioningUpdates")
+    #build_app(scheme: "Insane Circuit")
+    upload_to_testflight(username: "anderson.sjav@gmail.com")
   end
 end

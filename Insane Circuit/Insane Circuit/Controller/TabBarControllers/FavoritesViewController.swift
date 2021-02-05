@@ -10,9 +10,9 @@ import UIKit
 
 class FavoritesViewController: UIViewController {
     
-    let manager = NetworkManager()
+    let coredatamanager = CoreDataManager()
     
-    let persistenceUSerDefaults = Persistence()
+    let manager = NetworkManager()
     
     var charactersFavorites = [Character]() {
         didSet {
@@ -45,7 +45,7 @@ class FavoritesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let charactersFavoritesIDs = persistenceUSerDefaults.persistedObjects() {
+        if let charactersFavoritesIDs = coredatamanager.fetchFavoriteCharactersID() {
             if charactersFavoritesIDs.count == 1 {
                 manager.getCharacter(id: charactersFavoritesIDs.first!) { (character, error) in
                     if let error = error {

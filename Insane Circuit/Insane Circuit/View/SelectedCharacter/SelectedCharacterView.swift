@@ -9,11 +9,13 @@
 import UIKit
 
 class SelectedCharacterView: UIView {
+    
+    let managerCoreData = CoreDataManager()
 
     lazy var checkFavoritePressed: Bool = {
        return false
     }()
-    var persistenceUserDefaults = Persistence()
+    //var persistenceUserDefaults = Persistence()
     
     var character: Character?
     var image: Data?
@@ -147,7 +149,7 @@ class SelectedCharacterView: UIView {
         episodesLabel.textColor = .labelSecondaryColor
         
         //verificar a persistencia do objeto pra mudar o botão
-        if persistenceUserDefaults.existObjetc(object: character!.id) {
+        if managerCoreData.characterIsPersisted(at: character!.id) {
             checkFavoritePressed = true
             favorite.setImage(UIImage(named: "Favoritado"), for: .normal)
         }
@@ -157,10 +159,12 @@ class SelectedCharacterView: UIView {
         checkFavoritePressed = !checkFavoritePressed
         if checkFavoritePressed {
             favorite.setImage(UIImage(named: "Favoritado"), for: .normal)
-            persistenceUserDefaults.add(object: character!.id)
+            managerCoreData.saveNewCharacterFavorite(characaterID: Int64(character!.id))
+            //persistenceUserDefaults.add(object: character!.id)
         } else {
             favorite.setImage(UIImage(named: "Favoritar"), for: .normal)
-            persistenceUserDefaults.remove(object: character!.id)
+            managerCoreData.removeCharacterFavorite(characaterID: Int64(character!.id))
+            //persistenceUserDefaults.remove(object: character!.id)
         }
     }
 }

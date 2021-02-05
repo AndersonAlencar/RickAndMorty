@@ -14,7 +14,7 @@ class CharactersCollectionViewCell: UICollectionViewCell {
     
     lazy var nameCharacter: UILabel = {
         let nameCharacter = UILabel()
-        nameCharacter.font = UIFont.systemFont(ofSize: 28, weight: .bold)
+        nameCharacter.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         nameCharacter.adjustsFontSizeToFitWidth = true
         nameCharacter.textColor = .systemBlue
         nameCharacter.text = "Apenas Testando"
@@ -97,7 +97,7 @@ extension CharactersCollectionViewCell: ViewCode {
             locationCharacter.topAnchor.constraint(equalTo: nameCharacter.bottomAnchor, constant: 5),
             locationCharacter.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             locationCharacter.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            locationCharacter.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15)
+            locationCharacter.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
         ])
     }
     

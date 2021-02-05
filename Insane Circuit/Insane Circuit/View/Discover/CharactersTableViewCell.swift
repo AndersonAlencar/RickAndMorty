@@ -130,6 +130,7 @@ extension CharactersTableViewCell: UICollectionViewDelegateFlowLayout {
         return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0) // adicionar espaçamento interno a célula
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }

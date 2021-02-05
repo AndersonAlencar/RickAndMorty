@@ -76,6 +76,12 @@ class DiscoverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view = charactersView
+        navigationController?.navigationBar.barTintColor = UIColor.backgroundBlueColor
+        navigationController?.navigationBar.backgroundColor = UIColor.backgroundBlueColor
+
+        navigationController?.navigationBar.isTranslucent = false
+
+        
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Discover Characters"
 

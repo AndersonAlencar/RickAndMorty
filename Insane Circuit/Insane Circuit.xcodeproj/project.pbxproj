@@ -43,6 +43,10 @@
 		E2A6DB2A24EEAB3900DEAFF4 /* SelectedCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A6DB2924EEAB3900DEAFF4 /* SelectedCharacterViewController.swift */; };
 		E2CADBF324EEABF700527D21 /* SelectedCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CADBF224EEABF700527D21 /* SelectedCharacterView.swift */; };
 		E2CADBF524EEB47600527D21 /* EpisodesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CADBF424EEB47600527D21 /* EpisodesCollectionViewCell.swift */; };
+		E2F760D825CC2F02000D1A3A /* InsaneCircuit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2F760D625CC2F02000D1A3A /* InsaneCircuit.xcdatamodeld */; };
+		E2F760DC25CC2F89000D1A3A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F760DB25CC2F89000D1A3A /* CoreDataManager.swift */; };
+		E2F760ED25CC32B5000D1A3A /* CharacterPersistence+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F760EB25CC32B5000D1A3A /* CharacterPersistence+CoreDataClass.swift */; };
+		E2F760EE25CC32B5000D1A3A /* CharacterPersistence+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F760EC25CC32B5000D1A3A /* CharacterPersistence+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +100,10 @@
 		E2A6DB2924EEAB3900DEAFF4 /* SelectedCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCharacterViewController.swift; sourceTree = "<group>"; };
 		E2CADBF224EEABF700527D21 /* SelectedCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCharacterView.swift; sourceTree = "<group>"; };
 		E2CADBF424EEB47600527D21 /* EpisodesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesCollectionViewCell.swift; sourceTree = "<group>"; };
+		E2F760D725CC2F02000D1A3A /* InsaneCircuit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InsaneCircuit.xcdatamodel; sourceTree = "<group>"; };
+		E2F760DB25CC2F89000D1A3A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		E2F760EB25CC32B5000D1A3A /* CharacterPersistence+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterPersistence+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E2F760EC25CC32B5000D1A3A /* CharacterPersistence+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterPersistence+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +135,8 @@
 		E247D31C24EC3C4000C20D2A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E2F760EB25CC32B5000D1A3A /* CharacterPersistence+CoreDataClass.swift */,
+				E2F760EC25CC32B5000D1A3A /* CharacterPersistence+CoreDataProperties.swift */,
 				E247D32524EC3FA000C20D2A /* CharacterResults.swift */,
 				E247D31D24EC3C4F00C20D2A /* Character.swift */,
 				E247D31F24EC3CD100C20D2A /* Origin.swift */,
@@ -198,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				E252E7CF24EF5EBB00421A23 /* PersistenceFavoritesDefaults.swift */,
+				E2F760DB25CC2F89000D1A3A /* CoreDataManager.swift */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -254,6 +265,7 @@
 				E281BE6A24E6CEE200A6A23E /* Assets.xcassets */,
 				E281BE6C24E6CEE200A6A23E /* LaunchScreen.storyboard */,
 				E281BE6F24E6CEE200A6A23E /* Info.plist */,
+				E2F760D625CC2F02000D1A3A /* InsaneCircuit.xcdatamodeld */,
 			);
 			path = "Insane Circuit";
 			sourceTree = "<group>";
@@ -270,9 +282,9 @@
 		E281BE8324E6D02A00A6A23E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E2A6DB2C24EEAB8000DEAFF4 /* TabBarControllers */,
 				E281BE8D24E6D45500A6A23E /* MainTabBarViewController.swift */,
 				E2A6DB2924EEAB3900DEAFF4 /* SelectedCharacterViewController.swift */,
+				E2A6DB2C24EEAB8000DEAFF4 /* TabBarControllers */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -440,10 +452,12 @@
 				E247D32424EC3EE000C20D2A /* Episode.swift in Sources */,
 				E281BE6424E6CEDF00A6A23E /* SceneDelegate.swift in Sources */,
 				E247D33324EC418400C20D2A /* HTTPTask.swift in Sources */,
+				E2F760ED25CC32B5000D1A3A /* CharacterPersistence+CoreDataClass.swift in Sources */,
 				E247D32224EC3E9900C20D2A /* Location.swift in Sources */,
 				E247D32D24EC40CF00C20D2A /* ParameterEncoding.swift in Sources */,
 				E247D33524EC41A100C20D2A /* NetworkRouter.swift in Sources */,
 				E247D33D24EC48B700C20D2A /* NetworkManager.swift in Sources */,
+				E2F760D825CC2F02000D1A3A /* InsaneCircuit.xcdatamodeld in Sources */,
 				E2367E7324F9884B00071C6C /* Recheability.swift in Sources */,
 				E247D32624EC3FA000C20D2A /* CharacterResults.swift in Sources */,
 				E247D32F24EC413300C20D2A /* URLParameterEncoder.swift in Sources */,
@@ -451,6 +465,7 @@
 				E247D33724EC41B700C20D2A /* EndPointType.swift in Sources */,
 				E20F494724EF44AE00BC6261 /* FavoritesView.swift in Sources */,
 				E247D34024EC5AED00C20D2A /* ViewCode.swift in Sources */,
+				E2F760EE25CC32B5000D1A3A /* CharacterPersistence+CoreDataProperties.swift in Sources */,
 				E252E7D324EFFC6400421A23 /* PersistenceCache.swift in Sources */,
 				E2CADBF524EEB47600527D21 /* EpisodesCollectionViewCell.swift in Sources */,
 				E247D34424EC62FF00C20D2A /* CharactersTableViewCell.swift in Sources */,
@@ -459,6 +474,7 @@
 				E281BE8824E6D0CF00A6A23E /* DiscoverViewController.swift in Sources */,
 				E281BE8A24E6D0EA00A6A23E /* SeasonsViewController.swift in Sources */,
 				E247D31E24EC3C4F00C20D2A /* Character.swift in Sources */,
+				E2F760DC25CC2F89000D1A3A /* CoreDataManager.swift in Sources */,
 				E2CADBF324EEABF700527D21 /* SelectedCharacterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -724,6 +740,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E2F760D625CC2F02000D1A3A /* InsaneCircuit.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E2F760D725CC2F02000D1A3A /* InsaneCircuit.xcdatamodel */,
+			);
+			currentVersion = E2F760D725CC2F02000D1A3A /* InsaneCircuit.xcdatamodel */;
+			path = InsaneCircuit.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E281BE5624E6CEDF00A6A23E /* Project object */;
 }

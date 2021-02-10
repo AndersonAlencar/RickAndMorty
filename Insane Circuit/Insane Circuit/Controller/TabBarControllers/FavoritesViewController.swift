@@ -16,8 +16,12 @@ class FavoritesViewController: UIViewController {
     
     var charactersFavorites = [Character]() {
         didSet {
-            favoritesView.characters = charactersFavorites
-            getImage(id: charactersFavorites.first!.id)
+            if !charactersFavorites.isEmpty {
+                favoritesView.characters = charactersFavorites
+                getImage(id: charactersFavorites.first!.id)
+            } else {
+                favoritesView.characters = charactersFavorites
+            }
         }
     }
     
@@ -40,6 +44,13 @@ class FavoritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.barTintColor = UIColor.backgroundBlueColor
+        navigationController?.navigationBar.backgroundColor = UIColor.backgroundBlueColor
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.isTranslucent = false
+
+        //navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Favorites"
         view = favoritesView
     }
     
@@ -51,16 +62,22 @@ class FavoritesViewController: UIViewController {
                     if let error = error {
                         print("Error request: \(error)")
                     } else {
+                        self.charactersFavorites.removeAll()
                         self.charactersFavorites.append(character!)
                     }
                 }
             } else {
-                manager.getFavoritesCharacters(ids: charactersFavoritesIDs) { (characters, error) in
-                    if let error = error {
-                        print("Error request: \(error)")
-                    } else {
-                        self.charactersFavorites = characters!
+                if charactersFavoritesIDs.count != 0 {
+                    manager.getFavoritesCharacters(ids: charactersFavoritesIDs) { (characters, error) in
+                        if let error = error {
+                            print("Error request: \(error)")
+                        } else {
+                            self.charactersFavorites = characters!
+                        }
                     }
+                } else {
+                    self.charactersFavorites.removeAll()
+                    self.imagesFavorites.removeAll() ///Checar isso aqui 
                 }
             }
         }

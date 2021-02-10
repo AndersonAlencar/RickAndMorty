@@ -114,7 +114,7 @@ extension CharactersTableViewCell: UICollectionViewDelegate, UICollectionViewDat
         characterSelectedController.character = characters[indexPath.row]
         characterSelectedController.characterImage = images[indexPath.row]
         let modalcharacters = UINavigationController(rootViewController: characterSelectedController)
-        modalcharacters.modalPresentationStyle = .fullScreen
+        //modalcharacters.modalPresentationStyle = .fullScreen
         delegatePresentCharacters?.present(modalcharacters, animated: true, completion: nil)
     }
 }
@@ -129,7 +129,6 @@ extension CharactersTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0) // adicionar espaçamento interno a célula
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10

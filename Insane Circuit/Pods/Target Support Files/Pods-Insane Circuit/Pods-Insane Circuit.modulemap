@@ -1,0 +1,6 @@
+module Pods_Insane_Circuit {
+  umbrella header "Pods-Insane Circuit-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,11 @@
+# 1. Uncomment the next line to define a global platform for your project
+platform :ios, '13.0'
+
+# 2. Target to add frameworks to
+
+target 'Insane Circuit' do
+
+# 3. Frameworks to be imported  
+  pod 'lottie-ios'
+  
+end

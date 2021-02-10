@@ -17,7 +17,11 @@ class FavoritesView: UIView {
         didSet {
             DispatchQueue.main.async {
                 self.collectionFavorites.reloadData()
-                self.emptyCharacters.isHidden = true
+                if self.imagesCharacters.count == 0 {
+                    self.emptyCharacters.isHidden = false
+                } else {
+                    self.emptyCharacters.isHidden = true
+                }
             }
         }
     }
@@ -107,8 +111,9 @@ extension FavoritesView : UICollectionViewDelegate, UICollectionViewDataSource {
         let characterSelectedController = SelectedCharacterViewController()
         characterSelectedController.character = characters[indexPath.row]
         characterSelectedController.characterImage = imagesCharacters[indexPath.row]
+        characterSelectedController.referenceFavorite = presentCharacterDelegate
         let modalcharacters = UINavigationController(rootViewController: characterSelectedController)
-        modalcharacters.modalPresentationStyle = .fullScreen
+        //modalcharacters.modalPresentationStyle = .fullScreen
         presentCharacterDelegate?.present(modalcharacters, animated: true, completion: nil)
     }
     

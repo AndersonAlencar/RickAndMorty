@@ -9,6 +9,8 @@
 import UIKit
 
 class DiscoverViewController: UIViewController {
+    
+    var waitLoadReference: WaitLoadViewController?
 
     // MARK: cache
     let managerCache = PersistenceCache()
@@ -26,7 +28,7 @@ class DiscoverViewController: UIViewController {
                 charactersView.charactersAlive = charactersAlive
                 charactersView.imagesAlive = charactersImageAlive
                 managerCache.writeFileFromData(objects: charactersAlive, imageObjects: charactersImageAlive, type: .alive)
-
+                ifLoadComplete()
             } else {
                 if Reachability.isConnectedToNetwork() {
                     getImagesCharactersAlive(id: charactersAlive[charactersImageAlive.count].id)
@@ -42,7 +44,7 @@ class DiscoverViewController: UIViewController {
                 charactersView.charactersDead = charactersDead
                 charactersView.imagesDead = charactersImageDead
                 managerCache.writeFileFromData(objects: charactersDead, imageObjects: charactersImageDead, type: .dead)
-
+                ifLoadComplete()
             } else {
                 if Reachability.isConnectedToNetwork() {
                     getImagesCharactersDead(id: charactersDead[charactersImageDead.count].id)
@@ -57,6 +59,7 @@ class DiscoverViewController: UIViewController {
                 charactersView.charactersAlien = charactersAlien
                 charactersView.imagesAlien = charactersImageAlien
                 managerCache.writeFileFromData(objects: charactersAlien, imageObjects: charactersImageAlien, type: .alien)
+                ifLoadComplete()
             } else {
                 if Reachability.isConnectedToNetwork() {
                     getImagesCharactersAlien(id: charactersAlien[charactersImageAlien.count].id)
@@ -78,11 +81,11 @@ class DiscoverViewController: UIViewController {
         view = charactersView
         navigationController?.navigationBar.barTintColor = UIColor.backgroundBlueColor
         navigationController?.navigationBar.backgroundColor = UIColor.backgroundBlueColor
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
 
         navigationController?.navigationBar.isTranslucent = false
 
-        
-        navigationController?.navigationBar.prefersLargeTitles = true
+        //navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Discover Characters"
 
         getCharacters(page: 1, status: "alive")
@@ -171,6 +174,12 @@ class DiscoverViewController: UIViewController {
             } else {
                 self.charactersImageAlien.append(data!)
             }
+        }
+    }
+    
+    func ifLoadComplete() {
+        if charactersImageDead.count == 20 && charactersImageAlive.count == 20 && charactersImageAlien.count == 20 {
+            waitLoadReference?.presentDiscoverController()
         }
     }
 

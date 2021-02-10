@@ -187,7 +187,7 @@ class DiscoverViewController: UIViewController {
 
 extension DiscoverViewController: RequestNewPageDelegate {
     func requestNewPageAPI(page: Int, status: String) {
-        print("ok ele chamou page:\(page) e status: \(status)")
+        //print("ok ele chamou page:\(page) e status: \(status)")
         getCharacters(page: page, status: status)
     }
 }

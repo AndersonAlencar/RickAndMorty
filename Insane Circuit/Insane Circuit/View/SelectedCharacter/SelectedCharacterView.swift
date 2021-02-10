@@ -185,16 +185,18 @@ extension SelectedCharacterView: ViewCode {
     func setUpLayoutConstraints() {
         NSLayoutConstraint.activate([
             imageCharacter.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 18),
-            imageCharacter.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 38),
-            imageCharacter.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -38),
-            imageCharacter.heightAnchor.constraint(equalToConstant: 300)
+            //imageCharacter.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 38),
+            //imageCharacter.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -38),
+            imageCharacter.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imageCharacter.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3),
+            imageCharacter.widthAnchor.constraint(equalTo: imageCharacter.heightAnchor, multiplier: 1)
         ])
         NSLayoutConstraint.activate([
             nameCharacter.topAnchor.constraint(equalTo: imageCharacter.bottomAnchor, constant: 20),
             nameCharacter.centerXAnchor.constraint(equalTo: imageCharacter.centerXAnchor)
         ])
         NSLayoutConstraint.activate([
-            gender.topAnchor.constraint(equalTo: nameCharacter.bottomAnchor, constant: 30),
+            gender.topAnchor.constraint(equalTo: nameCharacter.bottomAnchor, constant: 25),
             gender.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 38),
             gender.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5)
         ])
@@ -204,13 +206,12 @@ extension SelectedCharacterView: ViewCode {
             status.centerYAnchor.constraint(equalTo: gender.centerYAnchor)
         ])
         NSLayoutConstraint.activate([
-            lastSeenLabel.topAnchor.constraint(equalTo: gender.bottomAnchor, constant: 32),
+            lastSeenLabel.topAnchor.constraint(equalTo: gender.bottomAnchor, constant: 10),
             lastSeenLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 38),
             lastSeenLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5)
-
         ])
         NSLayoutConstraint.activate([
-            location.topAnchor.constraint(equalTo: lastSeenLabel.bottomAnchor, constant: 17),
+            location.topAnchor.constraint(equalTo: lastSeenLabel.bottomAnchor, constant: 10),
             location.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 58),
             location.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.6)
         ])
@@ -219,17 +220,16 @@ extension SelectedCharacterView: ViewCode {
             favorite.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -38)
         ])
         NSLayoutConstraint.activate([
-            episodesLabel.topAnchor.constraint(equalTo: location.bottomAnchor, constant: 32),
+            episodesLabel.topAnchor.constraint(equalTo: location.bottomAnchor, constant: 10),
             episodesLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 38),
             episodesLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5)
 
         ])
         NSLayoutConstraint.activate([
-            collectionEpisodes.topAnchor.constraint(equalTo: episodesLabel.bottomAnchor, constant: 15),
+            collectionEpisodes.topAnchor.constraint(equalTo: episodesLabel.bottomAnchor, constant: 10),
             collectionEpisodes.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionEpisodes.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionEpisodes.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10)
-
         ])
     }
     
@@ -261,7 +261,7 @@ extension SelectedCharacterView: UICollectionViewDelegate, UICollectionViewDataS
 extension SelectedCharacterView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = collectionEpisodes.bounds
-        return CGSize(width: size.width/1.8, height: size.height)
+        return CGSize(width: size.width/1.8, height: size.width/1.8)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

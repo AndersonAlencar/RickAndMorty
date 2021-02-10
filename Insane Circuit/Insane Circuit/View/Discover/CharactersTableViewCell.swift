@@ -123,7 +123,7 @@ extension CharactersTableViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = collectionCharacters.bounds
-        return CGSize(width: size.width/1.8, height: size.height/1.2)
+        return CGSize(width: size.width/1.9, height: size.height/1.05)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

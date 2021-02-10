@@ -88,16 +88,18 @@ extension CharactersCollectionViewCell: ViewCode {
         ])
 
         NSLayoutConstraint.activate([
-            nameCharacter.topAnchor.constraint(equalTo: characterImage.bottomAnchor, constant: 10),
+            nameCharacter.topAnchor.constraint(equalTo: characterImage.bottomAnchor, constant: 8),
             nameCharacter.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            nameCharacter.trailingAnchor.constraint(equalTo: trailingAnchor)
+            nameCharacter.trailingAnchor.constraint(equalTo: trailingAnchor),
+            nameCharacter.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1)
         ])
         
         NSLayoutConstraint.activate([
             locationCharacter.topAnchor.constraint(equalTo: nameCharacter.bottomAnchor, constant: 5),
             locationCharacter.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             locationCharacter.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            locationCharacter.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
+            locationCharacter.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.15)
+            //locationCharacter.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
         ])
     }
     

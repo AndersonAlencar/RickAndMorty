@@ -12,10 +12,12 @@ import Lottie
 class WaitLoadViewController: UIViewController {
     
     private var animationView: AnimationView?
-    let tabBar = MainTabBarViewController()
-
+    
+    let viewModel = WaitLoadViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.referenceDelegate = self
         animationView = AnimationView(name: "galaxy")
         animationView?.frame = view.bounds
         animationView?.contentMode = .scaleAspectFit
@@ -25,27 +27,6 @@ class WaitLoadViewController: UIViewController {
         animationView?.backgroundColor = .backgroundBlueColor
         animationView?.play()
         animationView?.loopMode = .loop
-        initTab()
+        viewModel.initTab()
     }
-    
-    func initTab() {
-        let controller = tabBar.viewControllers?.first as! UINavigationController
-        let discover = controller.topViewController as! DiscoverViewController
-        discover.waitLoadReference = self
-        discover.viewDidLoad()
-    }
-    
-    func presentDiscoverController() {
-        DispatchQueue.main.async { [self] in
-            guard let window = UIApplication.shared.windows.first else { return }
-            window.rootViewController = tabBar
-            UIView.transition(
-                with: window,
-                duration: 0.3,
-                options: .transitionCrossDissolve,
-                animations: nil,
-                completion: nil)
-        }
-    }
-
 }

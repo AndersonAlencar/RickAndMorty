@@ -179,7 +179,7 @@ class DiscoverViewController: UIViewController {
     
     func ifLoadComplete() {
         if charactersImageDead.count == 20 && charactersImageAlive.count == 20 && charactersImageAlien.count == 20 {
-            waitLoadReference?.presentDiscoverController()
+            waitLoadReference?.viewModel.presentDiscoverController()
         }
     }
 

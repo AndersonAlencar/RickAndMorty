@@ -43,8 +43,10 @@
 		E28F713425D1681C00155721 /* space.json in Resources */ = {isa = PBXBuildFile; fileRef = E28F713325D1681C00155721 /* space.json */; };
 		E28F713825D16C3F00155721 /* WaitLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28F713725D16C3F00155721 /* WaitLoadViewController.swift */; };
 		E28F713E25D1713200155721 /* galaxy.json in Resources */ = {isa = PBXBuildFile; fileRef = E28F713D25D1713200155721 /* galaxy.json */; };
+		E28F71D525D5537D00155721 /* WailoadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28F71D425D5537D00155721 /* WailoadViewModel.swift */; };
 		E2A6DB2824EE26A000DEAFF4 /* RequestNewPageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A6DB2724EE26A000DEAFF4 /* RequestNewPageDelegate.swift */; };
 		E2A6DB2A24EEAB3900DEAFF4 /* SelectedCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A6DB2924EEAB3900DEAFF4 /* SelectedCharacterViewController.swift */; };
+		E2BFA71925D6A45400213EAF /* DiscoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BFA71825D6A45400213EAF /* DiscoverViewModel.swift */; };
 		E2CADBF324EEABF700527D21 /* SelectedCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CADBF224EEABF700527D21 /* SelectedCharacterView.swift */; };
 		E2CADBF524EEB47600527D21 /* EpisodesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CADBF424EEB47600527D21 /* EpisodesCollectionViewCell.swift */; };
 		E2F760D825CC2F02000D1A3A /* InsaneCircuit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2F760D625CC2F02000D1A3A /* InsaneCircuit.xcdatamodeld */; };
@@ -105,8 +107,10 @@
 		E28F713325D1681C00155721 /* space.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = space.json; sourceTree = "<group>"; };
 		E28F713725D16C3F00155721 /* WaitLoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitLoadViewController.swift; sourceTree = "<group>"; };
 		E28F713D25D1713200155721 /* galaxy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = galaxy.json; sourceTree = "<group>"; };
+		E28F71D425D5537D00155721 /* WailoadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WailoadViewModel.swift; sourceTree = "<group>"; };
 		E2A6DB2724EE26A000DEAFF4 /* RequestNewPageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestNewPageDelegate.swift; sourceTree = "<group>"; };
 		E2A6DB2924EEAB3900DEAFF4 /* SelectedCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCharacterViewController.swift; sourceTree = "<group>"; };
+		E2BFA71825D6A45400213EAF /* DiscoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewModel.swift; sourceTree = "<group>"; };
 		E2CADBF224EEABF700527D21 /* SelectedCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCharacterView.swift; sourceTree = "<group>"; };
 		E2CADBF424EEB47600527D21 /* EpisodesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesCollectionViewCell.swift; sourceTree = "<group>"; };
 		E2F760D725CC2F02000D1A3A /* InsaneCircuit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InsaneCircuit.xcdatamodel; sourceTree = "<group>"; };
@@ -318,6 +322,7 @@
 				E281BE8D24E6D45500A6A23E /* MainTabBarViewController.swift */,
 				E2A6DB2924EEAB3900DEAFF4 /* SelectedCharacterViewController.swift */,
 				E28F713725D16C3F00155721 /* WaitLoadViewController.swift */,
+				E28F71D425D5537D00155721 /* WailoadViewModel.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				E281BE8724E6D0CF00A6A23E /* DiscoverViewController.swift */,
+				E2BFA71825D6A45400213EAF /* DiscoverViewModel.swift */,
 				E281BE8924E6D0EA00A6A23E /* SeasonsViewController.swift */,
 				E281BE8B24E6D0F900A6A23E /* FavoritesViewController.swift */,
 			);
@@ -509,6 +515,7 @@
 				E247D34224EC5B4C00C20D2A /* CharactersView.swift in Sources */,
 				E247D32424EC3EE000C20D2A /* Episode.swift in Sources */,
 				E28F713825D16C3F00155721 /* WaitLoadViewController.swift in Sources */,
+				E28F71D525D5537D00155721 /* WailoadViewModel.swift in Sources */,
 				E281BE6424E6CEDF00A6A23E /* SceneDelegate.swift in Sources */,
 				E247D33324EC418400C20D2A /* HTTPTask.swift in Sources */,
 				E2F760ED25CC32B5000D1A3A /* CharacterPersistence+CoreDataClass.swift in Sources */,
@@ -533,6 +540,7 @@
 				E281BE8824E6D0CF00A6A23E /* DiscoverViewController.swift in Sources */,
 				E281BE8A24E6D0EA00A6A23E /* SeasonsViewController.swift in Sources */,
 				E247D31E24EC3C4F00C20D2A /* Character.swift in Sources */,
+				E2BFA71925D6A45400213EAF /* DiscoverViewModel.swift in Sources */,
 				E2F760DC25CC2F89000D1A3A /* CoreDataManager.swift in Sources */,
 				E2CADBF324EEABF700527D21 /* SelectedCharacterView.swift in Sources */,
 			);

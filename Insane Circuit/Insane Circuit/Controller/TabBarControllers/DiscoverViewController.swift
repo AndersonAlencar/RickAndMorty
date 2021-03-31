@@ -107,7 +107,10 @@ class DiscoverViewController: UIViewController {
                             }
                         }
                     } else {
-                        self.charactersAlive.append(contentsOf: characterAlive!.results)
+                        guard let character = characterAlive?.results else{
+                            return
+                        }
+                        self.charactersAlive.append(contentsOf: character)
                         self.charactersView.charactersAlive = self.charactersAlive
                         self.getImagesCharactersAlive(id: self.charactersAlive[self.charactersAlive.count-20].id)
                     }
@@ -139,7 +142,10 @@ class DiscoverViewController: UIViewController {
                             }
                         }
                     } else {
-                        self.charactersAlien.append(contentsOf: characterAlien!.results)
+                        guard let character = characterAlien!.results else{
+                            return
+                        }
+                        self.charactersAlien.append(contentsOf: character)
                         self.charactersView.charactersAlien = self.charactersAlien
                         self.getImagesCharactersAlien(id: self.charactersAlien[self.charactersAlien.count-20].id)
                     }
